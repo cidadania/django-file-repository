@@ -1,0 +1,35 @@
+{% load i18n %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-ES" xml:lang="es-ES">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/bootstrap.css" media="screen" />
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}/css/screen.css"/>
+        <link rel="shortcut icon" href="{{ STATIC_URL }}/assets/favicon.ico" type="image/ico"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="Description" content="Repositorio de documentos de cidadania."/>
+        <meta name="Robots" content="all"/>
+        <script src="http://www.google.com/jsapi?key=ABQIAAAATqrYeRgzMa92HeAJ337iJhRWlTAuTwYT79cviOHriikXgTyaXRSApoqdJPf4dwJKYRnFn_s4iABNkg" type="text/javascript"></script>
+        <script type="text/javascript">
+            google.load("jquery", "1.7.1", {uncompressed:false});
+        </script>
+        <script src="{{ STATIC_URL }}/js/bootstrap-dropdown.js" type="text/javascript"></script>
+        <script src="{{ STATIC_URL }}/js/bootstrap-alerts.js" type="text/javascript"></script>
+        {% block extrajs %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="mainheader">
+            <div id="description">{% trans "Document repository" %}</div>
+            <div id="logo"><img src="{{ STATIC_FILES }}/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/></div>
+        </div>
+        <div class="row">
+            {% block "content" %}
+            {% endblock %}
+        </div>
+        <div id="footer">
+            Este es el footer
+        </div>
+    </body>
+</html>
