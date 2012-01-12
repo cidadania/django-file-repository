@@ -8,7 +8,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Oscar Carballal Prego', 'oscar.carballal@cidadania.coop'),
+    #('AdminName', 'admin@email.com'),
 )
 
 MANAGERS = ADMINS
@@ -130,8 +130,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'cidadania_docrepo.apps.registration',
-    'cidadania_docrepo.apps.repository',
+    'django-fr.apps.registration',
+    'django-fr.apps.repository',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
