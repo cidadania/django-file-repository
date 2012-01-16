@@ -20,14 +20,27 @@
     </head>
 
     <body>
-        <div id="mainheader">
-            <div id="description">{% trans "Document repository" %}</div>
-            <div id="logo"><img src="{{ STATIC_FILES }}/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/></div>
-        </div>
-        {% block content %}
-        {% endblock %}
-        <div id="footer">
-            Este es el footer
+        
+        <div class="container">
+            <div class="content">
+                <div class="page-header">
+                    <h1><div id="logo"><img src="{{ STATIC_FILES }}/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/></div> {% block pagetitle %}{% endblock %} <small>{% block pagedescription %}{% endblock %}</small></h1>
+                </div>
+                <div class="row">
+                    <div class="span10">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                    <div class="span4">
+                        {% block sidebar %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>© Company 2011</p>
+            </footer>
         </div>
     </body>
 </html>

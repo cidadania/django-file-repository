@@ -15,7 +15,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'db/sqlite.db',
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
@@ -113,7 +113,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
 )
 
-ROOT_URLCONF = 'cidadania_docrepo.urls'
+ROOT_URLCONF = 'django-fr.urls'
 
 TEMPLATE_DIRS = (
     (cwd + '/templates/')
@@ -130,15 +130,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'django-fr.apps.registration',
-    'django-fr.apps.repository',
+    'registration',
+    'repository',
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
-EMAIL_HOST=‘localhost’
+EMAIL_HOST="localhost"
 EMAIL_PORT=1023
-EMAIL_HOST_USER=‘username’
-EMAIL_HOST_PASSWORD=‘password’
+EMAIL_HOST_USER="username"
+EMAIL_HOST_PASSWORD="password"
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

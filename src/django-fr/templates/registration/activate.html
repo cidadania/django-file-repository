@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation failed" %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span16">
+            <h3>{% trans "User activation failed" %}</h3>
+            <p>{% trans "The activation key you used probably expired or have been already used." %}</p>
+            <a href="{% url home %}" alt="{% trans 'Go back home' %}" title="{% trans 'Go back home' %}">{% trans 'Go back home' %}</a>
+        </div>
+    </div>
+{% endblock %}

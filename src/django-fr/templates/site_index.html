@@ -1,9 +1,40 @@
+{% extends "base.html" %}
 {% load i18n %}
 
-{% block content %}
-    <div class="row">
-        <div class="span16">
+{% block title %}{% trans "Welcome to the YOURNAME repository" %}{% endblock %}
 
+{% block pagetitle %}Cidada repository{% endblock %}
+{% block pagedescription %}Esto mola{% endblock %}
+
+{% block content %}
+    <h3>{% trans "Public document list" %}</h3>
+    {% for object in files %}
+        <div id="object">
+            <div class="front"><img src="{{ object.front }}" alt="File image" title="{{ object.name }}"/></div>
+            <div class="filedescription">
+                <h6>{{ object.name }}</h6>
+                <p>{{ object.description }}</p>
+            </div>
+            <div class="fileoptions">
+                {% if object.stored_file %}
+                    <a href="{{ MEDIA_URL }}/">{% trans "Download" %}</a>
+                    {% if user.is_staff %}
+                        <a href="{% url delete-file %}">{% trans "Delete" %}</a>
+                        <a href="{% url edit-file %}">{% trans "Edit"%}</a>>
+                    {% endif%}
+                {% endif%}
+            </div>
         </div>
-    </div>
+    {% endfor %}
+{% endblock %}
+
+{% block sidebar %}
+    <h3>{% trans "Other categories" %}</h3>
+    <ul class="unstyled">
+    {% for category in categories %}
+        <li>{{ category.name }}</li>
+    {% empty %}
+        <p>{% trans "The aren't any categories." %}</p>
+    {% endfor %}
+    </ul>
 {% endblock %}

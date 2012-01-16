@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation complete" %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span16">
+            <h3>{% trans "User activation complete" %}</h3>
+            <p>{% trans "The activation process has ended, you can now start using your account. Yay!" %}</p>
+            <a href="{% url home %}" alt="{% trans 'Go back home' %}" title="{% trans 'Go back home' %}">{% trans 'Go back home' %}</a>
+        </div>
+    </div>
+{% endblock %}
