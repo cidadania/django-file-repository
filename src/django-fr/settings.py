@@ -135,6 +135,10 @@ INSTALLED_APPS = (
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7
+EMAIL_HOST=‘localhost’
+EMAIL_PORT=1023
+EMAIL_HOST_USER=‘username’
+EMAIL_HOST_PASSWORD=‘password’
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

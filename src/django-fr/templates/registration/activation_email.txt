@@ -1,0 +1,12 @@
+{% load humanize %}
+You have registered in {{ site }}, thank you very much.
+
+Click on this link to activate tyour account and start using the site:
+
+http://{{ site }}/accounts/activate/{{ activation_key }}
+
+If you can't follow the link, here is the key:
+
+{{ activation_key }}
+
+If you didn't register on {{ site }} you can disregard this message. We will not email you again, and the account will expire in {{ expiration_days }} days.
