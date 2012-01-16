@@ -1,0 +1,86 @@
+{% load i18n %}
+
+{% block title %}{% trans "User registration" %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="offset5 span11">
+            <form action="" method="post" accept-charset="utf-8">
+                {% csrf_token %}
+                <h4>{% trans "User registration" %}</h4>
+
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <span class="help-inline">{{ error|escape }}</span>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="clearfix {% if form.username.errors %}error{% endif%}">
+                    <label for="prependedInput">{% trans "Username" %}</label>
+                    <div class="input">
+                        {{ form.username }}
+                        <span class="help-inline">
+                            {% if form.username.errors %}
+                                {% for error in form.username.errors %}
+                                    {{ error|escape }}
+                                {% endfor %}
+                            {% else %}
+                                {{ form.username.help_text }}
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="clearfix {% if form.email.errors %}error{% endif%}">
+                    <label for="prependedInput">{% trans "E-mail (optional)" %}</label>
+                    <div class="input">
+                        {{ form.email }}
+                        <span class="help-inline">
+                            {% if form.email.errors %}
+                                {% for error in form.email.errors %}
+                                    {{ error|escape }}
+                                {% endfor %}
+                            {% else %}
+                                {{ form.email.help_text }}
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="clearfix {% if form.password1.errors %}error{% endif%}">
+                    <label for="prependedInput">{% trans "Password" %}</label>
+                    <div class="input">
+                        {{ form.password1 }}
+                        <span class="help-inline">
+                            {% if form.password1.errors %}
+                                {% for error in form.password1.errors %}
+                                    {{ error|escape }}
+                                {% endfor %}
+                            {% else %}
+                                {{ form.password1.help_text }}
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="clearfix {% if form.password2.errors %}error{% endif%}">
+                    <label for="prependedInput">{% trans "Password (again)" %}</label>
+                    <div class="input">
+                        {{ form.password2 }}
+                        <span class="help-inline">
+                            {% if form.password2.errors %}
+                                {% for error in form.password2.errors %}
+                                    {{ error|escape }}
+                                {% endfor %}
+                            {% else %}
+                                {{ form.password2.help_text }}
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+
+                <p><input type="submit" value="{% trans 'Register' %}" class="btn large" /></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}
