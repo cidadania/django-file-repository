@@ -1,0 +1,13 @@
+{% load i18n %}
+
+{% block title %}{% trans "Registration complete" %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span16">
+            <h3>{% trans "Registration complete" %}</h3>
+            <p>{% trans "The registration process has ended, we have sent you an email with your user and password." %}</p>
+            <a href="{% url home %}" alt="{% trans 'Go back home' %}" title="{% trans 'Go back home' %}">{% trans 'Go back home' %}</a>
+        </div>
+    </div>
+{% endblock %}
