@@ -14,6 +14,8 @@ urlpatterns = patterns('',
     url(r'^user/', include('registration.backends.default.urls')),
 
     url(r'^i18n/', include('django.conf.urls.i18n')),
+    
+    url(r'^file/', include('djangofr.repository.urls')),
 
     # Static content #### FOR DEVELOPMENT!! ####
     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',
