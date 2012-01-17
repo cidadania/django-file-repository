@@ -1,12 +1,12 @@
-{% load humanize %}
-You have registered in {{ site }}, thank you very much.
+{% load i18n %}
+{% blocktrans %}You have registered in {{ site }}, thank you very much.{% endblocktrans %}
 
-Click on this link to activate tyour account and start using the site:
+{% trans "Click on this link to activate tyour account and start using the site:" %}
 
-http://{{ site }}/accounts/activate/{{ activation_key }}
+http://{{ site }}/user/activate/{{ activation_key }}
 
-If you can't follow the link, here is the key:
+{% trans "If you can't follow the link, here is the key:" %}
 
 {{ activation_key }}
 
-If you didn't register on {{ site }} you can disregard this message. We will not email you again, and the account will expire in {{ expiration_days }} days.
+{% blocktrans %}If you didn't register on {{ site }} you can disregard this message. We will not email you again, and the account will expire in {{ expiration_days }} days.{% endblocktrans %}
