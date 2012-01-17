@@ -6,6 +6,10 @@ from repository.models import RepoFile, Category
 def view_site_index(request):
 
     """
+    This is the main site view. All the public repository objects are shown here.
+    We also get the categories context to filter them in the template.
+    
+    :contexts: files, categories
     """
     files = RepoFile.objects.filter(public=True)
     categories = Category.objects.all()
