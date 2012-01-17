@@ -8,7 +8,7 @@ def view_site_index(request):
     """
     """
     files = RepoFile.objects.filter(public=True)
-    categories = Cetagory.objects.all()
+    categories = Category.objects.all()
     
     return render_to_response('site_index.html', {'file': files,'categories':categories},
         context_instance=RequestContext(request))
