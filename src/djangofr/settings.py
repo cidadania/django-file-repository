@@ -113,7 +113,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
 )
 
-ROOT_URLCONF = 'django-fr.urls'
+ROOT_URLCONF = 'djangofr.urls'
 
 TEMPLATE_DIRS = (
     (cwd + '/templates/')

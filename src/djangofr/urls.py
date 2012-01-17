@@ -5,7 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    url(r'^$', 'django-fr.views.view_site_index', name='home'),
+    url(r'^$', 'djangofr.views.view_site_index', name='home'),
 
     url(r'^admin/', include(admin.site.urls)),
 

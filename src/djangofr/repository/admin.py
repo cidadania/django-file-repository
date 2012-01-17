@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from django-fr.repository.models import Categories, RepoFile
+from djangofr.repository.models import Categories, RepoFile
 
 class CategoryAdmin(admin.ModelAdmin):
 
@@ -22,7 +22,7 @@ class RepoFileAdmin(admin.ModelAdmin):
             [('name', 'category'), 'description']}),
             
         (None, {'fields':
-            ['public',]})
+            ['public',]}),
     ]
     
 admin.site.register(Category, CategoryAdmin)
