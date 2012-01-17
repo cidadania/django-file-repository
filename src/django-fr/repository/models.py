@@ -25,14 +25,16 @@ class RepoFile(models.Model):
     name = models.CharField(_('Name'), max_length=250,
         help_text=_('This will be the visible name of the file.'))
     description = models.TextField(_('Description of the file'))
-    front = models.ImageField(upload_to='images/')
+    front = models.ImageField(upload_to='images/', blank=True, null=True)
     stored_file = models.FileField(upload_to='/files',
         verbose_name=_('File to upload'),
         help_text=_('Maximum file size is 25MB.'), blank=True, null=True)
     category = models.ForeignKey(Category, verbose_name=_('Select the category'))
-    public = models.BooleanField(_('Public'), verbose_name=_('Selecting this will make the file available to public.'))
+    public = models.BooleanField(_('Make public'),
+        help_text=_('Selecting this will make the file available to public.'))
     allowed_users = models.ForeignKey(User, blank=True, null=True,
-        verbose_name=_('Select the users that can see this file.'),
+        verbose_name=_('Allowed users'),
+        help_text=_('Select the users that can see this file.'),
         related_name="allowed_users")
         
     pub_date = models.DateTimeField(auto_now_add=True)
