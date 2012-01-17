@@ -8,21 +8,23 @@
 
 {% block content %}
     <h3>{% trans "Public document list" %}</h3>
-    {% for object in files %}
+    {% for object in file %}
         <div id="object">
-            <div class="front"><img src="{{ object.front }}" alt="File image" title="{{ object.name }}"/></div>
+            <div class="front"><img src="http://placehold.it/150x200" alt="File image" title="{{ object.name }}"/></div>
             <div class="filedescription">
                 <h6>{{ object.name }}</h6>
                 <p>{{ object.description }}</p>
             </div>
             <div class="fileoptions">
-                {% if object.stored_file %}
-                    <a href="{{ MEDIA_URL }}/">{% trans "Download" %}</a>
+                <ul class="unstyled">
+                    {% if object.stored_file %}
+                        <li><a href="{{ MEDIA_URL }}{{ object.stored_file.url }}">{% trans "Download" %}</a></li>
+                    {% endif %}
                     {% if user.is_staff %}
-                        <a href="{% url delete-file %}">{% trans "Delete" %}</a>
-                        <a href="{% url edit-file %}">{% trans "Edit"%}</a>>
+                        <li><a href="#">{% trans "Delete" %}</a></li>
+                        <li><a href="#">{% trans "Edit"%}</a></li>
                     {% endif%}
-                {% endif%}
+                </ul>
             </div>
         </div>
     {% endfor %}
