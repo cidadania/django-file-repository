@@ -23,9 +23,22 @@
         
         <div class="container">
             <div class="content">
+            
                 <div class="page-header">
                     <h1><div id="logo"><img src="{{ STATIC_FILES }}/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/></div> {% block pagetitle %}{% endblock %} <small>{% block pagedescription %}{% endblock %}</small></h1>
                 </div>
+                
+                <div class="row">
+                    <div class="span16">
+                        {% trans "Hi," %}
+                        {% if user.is_authenticated %}
+                            {{ user.username }}. <a href="{% url auth_logout %}">{% trans "Logout" %}</a>
+                        {% else %}
+                            {% trans "anonymous." %} <a href="{% url auth_login %}">{% trans "Login" %}</a>
+                        {% endif%}
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="span10">
                         {% block content %}
@@ -36,6 +49,7 @@
                         {% endblock %}
                     </div>
                 </div>
+                
             </div>
 
             <footer>
