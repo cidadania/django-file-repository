@@ -24,8 +24,11 @@
         <div class="container">
             <div class="content">
             
-                <div class="page-header">
-                    <h1><div id="logo"><img src="{{ STATIC_FILES }}/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/></div> {% block pagetitle %}{% endblock %} <small>{% block pagedescription %}{% endblock %}</small></h1>
+                <div class="page-header" style="min-height:110px;">
+                    <div id="logo" style="margin:5px;float:left;display:block;">
+                        <img src="http://placehold.it/100x100" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/>
+                    </div>
+                    <h1 style="line-height:110px;">{% block pagetitle %}{% endblock %} <small>{% block pagedescription %}{% endblock %}</small></h1>
                 </div>
                 
                 <div class="row">
@@ -53,7 +56,7 @@
             </div>
 
             <footer>
-                <p>© Company 2011</p>
+                <p>© Cidadania Sociedade Cooperativa Galega 2011</p>
             </footer>
         </div>
     </body>
