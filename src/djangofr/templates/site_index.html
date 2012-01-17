@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Welcome to the YOURNAME repository" %}{% endblock %}
+{% block title %}{% trans "YOURNAME repository" %}{% endblock %}
 
-{% block pagetitle %}Cidada repository{% endblock %}
-{% block pagedescription %}Esto mola{% endblock %}
+{% block pagetitle %}File repository{% endblock %}
+{% block pagedescription %}Example repository{% endblock %}
 
 {% block content %}
     <h3>{% trans "Public document list" %}</h3>
@@ -13,17 +13,15 @@
             <div class="front"><img src="http://placehold.it/150x200" alt="File image" title="{{ object.name }}"/></div>
             <div class="filedescription">
                 <h6>{{ object.name }}</h6>
-                <p>{{ object.description }}</p>
+                <p>{{ object.description|truncatewords:16 }}...</p>
             </div>
             <div class="fileoptions">
-                <ul class="unstyled">
-                    {% if object.stored_file %}
-                        <li><a href="{{ MEDIA_URL }}{{ object.stored_file.url }}">{% trans "Download" %}</a></li>
-                    {% endif %}
-                    {% if user.is_staff %}
-                        <li><a href="#">{% trans "Delete" %}</a></li>
-                        <li><a href="#">{% trans "Edit"%}</a></li>
-                    {% endif%}
+                {% if object.stored_file %}
+                    <a href="{{ MEDIA_URL }}{{ object.stored_file.url }}"><img src="{{ STATIC_URL }}/img/download.png" title="{% trans 'Download' %}" alt="{% trans 'Download' %}" /></a>
+                {% endif %}
+                {% if user.is_staff %}
+                    <a href="#"><img src="{{ STATIC_URL }}/img/delete.png" title="{% trans 'Delete' %}" alt="{% trans 'Delete' %}" /></a>
+                {% endif%}
                 </ul>
             </div>
         </div>
