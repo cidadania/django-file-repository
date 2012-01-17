@@ -9,3 +9,9 @@ body {
 .content {
     background: #FAFAFA;
 }
+
+#object {
+    float: left;
+    width: 150px;
+    margin: 10px;
+}
