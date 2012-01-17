@@ -6,7 +6,7 @@
 {% block content %}
   
 <div class="row" style="margin-top:100px;margin-bottom:100px;">
-    <div class="span6 offset5">
+    <div class="span6 offset2">
 	        <form action="{% if next %}?next={{ next }}{% endif %}" method="post" accept-charset="utf-8" class="form-stacked">{% csrf_token %}
 	          <fieldset>
 		          <legend>{% trans "User login" %}</legend>
@@ -38,11 +38,15 @@
 	        <p><input type="submit" class="btn" value="{% trans 'Login' %}" /></p>
 	    </form>
     </div>
-    <div class="span5">
-        <h4>{% trans "Helpful links" %}</h4>
-        <a href="{% url 'auth_password_change' %}">{% trans "Change your password" %}</a><br />
-        <a href="{% url 'register' %}">{% trans "Sign up!" %}</a><br />
-    </div>
-
 </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="row">
+        <div class="span5">
+            <h4>{% trans "Helpful links" %}</h4>
+            <a href="{% url auth_password_change %}">{% trans "Change your password" %}</a><br />
+            <a href="{% url registration_register %}">{% trans "Sign up!" %}</a><br />
+        </div>
+    </div>
 {% endblock %}
