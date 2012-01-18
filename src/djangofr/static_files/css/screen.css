@@ -13,7 +13,8 @@ body {
 #object {
     float: left;
     width: 150px;
-    margin: 15px;
+    min-height: 330px;
+    margin: 10px;
 }
 
 .tag {
@@ -27,4 +28,11 @@ body {
 
 .file_detail {
     margin: 15px;
+}
+
+.pagination {
+}
+
+.step-links {
+    
 }
