@@ -10,18 +10,49 @@
     <h3>{{ file.name }}</h3>
     <div class="row">
         <div class="span4">
-            <img src="http://placehold.it/150x200" alt="{{ file.name }}" title="{{ file.name }}" />
-            <!--<img src="{{ file.front }}" alt="{{ file.name }}" title="{{ file.name }}" />-->
-            <div class="options">
-                <ul class="unstyled">
-                    <li>Edit</li>
-                    <li>Delete</li>
-                    <li>Download</li>
-                </ul>
+            <div class="file_detail">
+                <img src="http://placehold.it/150x200" alt="{{ file.name }}" title="{{ file.name }}" />
+                <!--<img src="{{ file.front }}" alt="{{ file.name }}" title="{{ file.name }}" />-->
+                <div class="options">
+                    <ul class="unstyled">
+                        {% if user.is_staff %}
+                            <li>
+                                <a href="{% url edit_file file.id %}">
+                                    <img src="{{ STATIC_URL }}/img/edit.png" title="{% trans 'Edit' %}" alt="{% trans 'Edit' %}" />
+                                    {% trans "Edit" %}
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url delete_file file.id %}">
+                                    <img src="{{ STATIC_URL }}/img/delete.png" title="{% trans 'Delete' %}" alt="{% trans 'Delete' %}" />
+                                    {% trans "Delete" %}
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if file.stored_file %}
+                            <li>
+                                <a href="{{ file.stored_file.url }}">
+                                    <img src="{{ STATIC_URL }}/img/download.png" title="{% trans 'Download' %}" alt="{% trans 'Download' %}" />
+                                    {% trans "Download" %} ({{ file.human_file_size }})
+                                </a>
+                            </li>
+                        {% else %}
+                            <li>{% trans "No download available." %}</li>
+                        {% endif %}
+                        <hr>
+                        <li>{% trans "Tags:" %} 
+                            {% for tag in file.tags.all %}
+                                <span class="tag">{{ tag.name }}</span>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="span8">
             {{ file.description }}
+            <hr>
+
         </div>
     </div>
 {% endblock %}
