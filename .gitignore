@@ -11,8 +11,8 @@
 _build*
 *~
 .svn*
-src/e_cidadania/uploads/*
-src/e_cidadania/static/*
+src/djangofr/uploads/*
+src/djangofr/static/*
 docs/build/*
 .epio*
 epio*
@@ -23,4 +23,4 @@ epio*
 *.prj
 *.dbf
 *.idea*
-src/e_cidadania/build/*
+src/djangofr/build/*
