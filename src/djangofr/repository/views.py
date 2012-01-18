@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404, redirect
+from django.template import RequestContext
 
 from djangofr.repository.models import Category, RepoFile
 
@@ -23,14 +24,17 @@ class ViewFile(DetailView):
         
         if not file_object.public:
             if self.request.user.is_anonymous():
-                return render_to_response('errors/not_allowed.html',
-                                      context_instance=RequestContext(request))
+                self.template_name = 'errors/not_allowed.html'
+                return RepoFile.objects.none()
             for i in file_object.allowed_users.all():
                 if i == self.request.user:
-                    return space_object
-        
-            return render_to_response('errors/not_allowed.html',
-                                      context_instance=RequestContext(request))
+                    return file_object
+            if self.request.user.is_staff:
+                return file_object
+            
+            self.template_name = 'errors/not_allowed.html'
+            return RepoFile.objects.none()
+            
         return file_object
 
     def get_context_data(self, **kwargs):
