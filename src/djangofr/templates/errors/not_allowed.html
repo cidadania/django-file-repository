@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Not allowed" %}{% endblock %}
+
+{% block pagetitle %}{% endblock %}
+{% block pagedescription %}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span12">
+            <h3>{% trans "You are not allowed to access here."%}</h3>
+            <p>{% trans "You can go back to"%} <a href="{% url home %}">home</a>.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
