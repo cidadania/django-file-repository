@@ -13,5 +13,18 @@ body {
 #object {
     float: left;
     width: 150px;
-    margin: 10px;
+    margin: 15px;
+}
+
+.tag {
+    background: #EEE;
+    border:1px solid #CCC;
+    padding: 2px 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.file_detail {
+    margin: 15px;
 }
