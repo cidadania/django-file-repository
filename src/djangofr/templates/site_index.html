@@ -8,7 +8,24 @@
 
 {% block content %}
     <h3>{% trans "Public document list" %}</h3>
-    {% for object in file %}
+
+    <div class="row">
+        <div class="span3 offset5">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if file.has_previous %}
+                        <a href="?page={{ file.previous_page_number }}">{% trans "previous" %}</a>
+                    {% endif %}
+                    {{ file.number }} {% trans "of" %} {{ file.paginator.num_pages }}
+                    {% if file.has_next %}
+                        <a href="?page={{ file.next_page_number }}">{% trans "next" %}</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    {% for object in file.object_list %}
         <div id="object">
             <div class="front"><img src="http://placehold.it/150x200" alt="File image" title="{{ object.name }}"/></div>
             <div class="filedescription">
