@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "View file" %} {{ file.name }}{% endblock %}
+
+{% block pagetitle %}{{ file.name }}{% endblock %}
+{% block pagedescription %}Siome kind of data{% endblock %}
+
+{% block content %}
+    <h3>{{ file.name }}</h3>
+    <div class="row">
+        <div class="span4">
+            <img src="http://placehold.it/150x200" alt="{{ file.name }}" title="{{ file.name }}" />
+            <!--<img src="{{ file.front }}" alt="{{ file.name }}" title="{{ file.name }}" />-->
+            <div class="options">
+                <ul class="unstyled">
+                    <li>Edit</li>
+                    <li>Delete</li>
+                    <li>Download</li>
+                </ul>
+            </div>
+        </div>
+        <div class="span8">
+            {{ file.description }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="row">
+    </div>
+{% endblock %}
