@@ -137,10 +137,10 @@ INSTALLED_APPS = (
 
 # django-registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
-EMAIL_HOST="mail.oscarcp.com"
-EMAIL_PORT=26
-EMAIL_HOST_USER="info+oscarcp.com"
-EMAIL_HOST_PASSWORD="s8yaz82bg14"
+EMAIL_HOST=""
+EMAIL_PORT=
+EMAIL_HOST_USER=""
+EMAIL_HOST_PASSWORD=""
 
 # django-auth settings
 LOGIN_REDIRECT_URL="/"
