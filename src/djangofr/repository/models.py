@@ -2,8 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
-
-# Create your models here.
+from djangofr.taggit.managers import TaggableManager
 
 class Category(models.Model):
 
@@ -41,10 +40,20 @@ class RepoFile(models.Model):
         verbose_name=_('Allowed users'),
         help_text=_('Select the users that can see this file.'),
         related_name="allowed_users")
+    tags = TaggableManager()
         
     pub_date = models.DateTimeField(auto_now_add=True)
     last_mod = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, blank=True, null=True, related_name="author")
+
+    def human_file_size(self):
+        print self.stored_file.size
+        if self.stored_file.size < 1023:
+            return str(self.stored_file.size) + " Bytes"
+        elif self.stored_file.size >= 1024 and self.stored_file.size <= 1048575:
+            return str(round(self.stored_file.size / 1024.0, 2)) + " KB"
+        elif self.stored_file.size >= 1048576:
+            return str(round(self.stored_file.size / 1024000.0, 2)) + " MB"
 
     class Meta:
          ordering = ['name']
@@ -59,4 +68,3 @@ class RepoFile(models.Model):
     def get_absolute_url(self):
         return ('view-file', (), {
             'file_id': self.id})
-
