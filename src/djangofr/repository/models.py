@@ -55,8 +55,8 @@ class RepoFile(models.Model):
     def __unicode__(self):
          return self.name
 
-#    @models.permalink
-#    def get_absolute_url(self):
-#        return ('space-index', (), {
-#            'space_name': self.url})
+    @models.permalink
+    def get_absolute_url(self):
+        return ('view-file', (), {
+            'file_id': self.id})
 
