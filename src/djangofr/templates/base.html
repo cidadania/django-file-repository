@@ -41,6 +41,7 @@
                             {{ user.username }}. <a href="{% url auth_logout %}">{% trans "Logout" %}</a>
                             {% if user.is_staff %}
                                 | <a href="{% url admin:index %}">{% trans "Administration" %}</a>
+                                | <a href="{% url add_file %}">{% trans "Add file" %}</a>
                             {% endif %}
                         {% else %}
                             {% trans "anonymous." %} <a href="{% url auth_login %}">{% trans "Login" %}</a> | 

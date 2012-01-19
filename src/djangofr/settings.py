@@ -143,7 +143,9 @@ ACCOUNT_ACTIVATION_DAYS = 7
 #EMAIL_HOST_PASSWORD=""
 
 # django-auth settings
+LOGIN_URL="/user/login"
 LOGIN_REDIRECT_URL="/"
+LOGOUT_URL="/user/logout"
 
 # django-tagging settings
 FORCE_LOWERCASE_TAGS = True

@@ -10,16 +10,17 @@ from django.template import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from djangofr.repository.models import Category, RepoFile
+from repository.models import Category, RepoFile
+from repository.forms import RepoFileForm
 
 
 def index(request):
 
     """
-    This is the main site view. All the public repository objects are shown here.
-    We also get the categories context to filter them in the template.
+    This is the main application view. All the public repository objects are
+    shown here. We also get the categories context to show them in the template.
     
-    :contexts: files, categories
+    :contexts: file, categories
     """
     file_list = RepoFile.objects.filter(public=True)
     paginator = Paginator(file_list, 16, orphans=3)
@@ -35,17 +36,21 @@ def index(request):
     except (EmptyPage, InvalidPage):
         files = paginator.page(paginator.num_pages)
         
-    return render_to_response('repository/index.html', {'file': files,'categories':categories},
+    return render_to_response('repository/repofile_index.html', {'file': files,'categories':categories},
         context_instance=RequestContext(request))
 
 
 class ViewFile(DetailView):
 
     """
-    Returns the file object. If the file is not public and the user is
+    Returns the file object. If the file is not public and the user is not in the
+    allowed_users field the view returns a 'not allowed' error. Incase the user
+    is allowed ot is an admin, the view returns the file.
+    
+    :context: file
     """
     context_object_name = 'file'
-    template_name = 'repository/file_detail.html'
+    template_name = 'repository/repofile_detail.html'
     
     def get_object(self):
         fileid = self.kwargs['file_id']
@@ -73,8 +78,27 @@ class ViewFile(DetailView):
 def add_file(request):
 
     """
+    Creates a new RepoFile object. The form is modified during validation to
+    store the author.
+    
+    :context: form
     """
-    pass
+    file_form = RepoFileForm(request.POST or None)
+    
+    if request.user.is_staff:
+        if request.method == 'POST':
+            if file_form.is_valid():
+                file_form_uncommited = file.form.save(commit=False)
+                file_form_uncommited.author = request.user
+                file_form_uncommited.save()
+                
+                return redirect('/')
+    else:
+        return render_to_response('errors/not_allowed.html',
+                                  context_instance=RequestContext(request))
+    
+    return render_to_response('repository/repofile_add.html', {'form':file_form},
+                              context_instance=RequestContext(request))
 
 
 def edit_file(request, file_id):
@@ -87,20 +111,27 @@ def edit_file(request, file_id):
 class DeleteFile(DeleteView):
 
     """
+    This view deletes the file the admin selects. It uses the default template
+    for the class view.
     """
     context_object_name = 'file'
     success_url = '/'
     
+    @method_decorator(permission_required('repofiles.delete_repofile'))
     def dispatch(self, *args, **kwargs):
         return super(DeleteFile, self).dispatch(*args, **kwargs)
 
     def get_object(self):
-        return get_object_or_404(RepoFile, url = self.kwargs['file_id'])
+        return get_object_or_404(RepoFile, pk = self.kwargs['file_id'])
         
 
 def cat_show(request, cat_id):
 
     """
+    Shows all the files inside a specific category. This only includes the public
+    files.
+    
+    :context: file, categories, current_category
     """
     # Current selected category
     cat = get_object_or_404(Category, pk=cat_id)
@@ -129,6 +160,11 @@ def cat_show(request, cat_id):
 def user_files(request):
 
     """
+    Show all the private files where the user has access. This does not include
+    the public files. This view is paginated every 16 objects. If a page
+    contains only 3 objects, they're added to the last page.
+    
+    :context: file
     """
     file_list = RepoFile.objects.filter(allowed_users__id=request.user.id)
 
@@ -144,5 +180,5 @@ def user_files(request):
     except (EmptyPage, InvalidPage):
         files = paginator.page(paginator.num_pages)
         
-    return render_to_response('repository/user_files.html', {'file':files},
+    return render_to_response('repository/repofile_user_files.html', {'file':files},
                               context_instance=RequestContext(request))
