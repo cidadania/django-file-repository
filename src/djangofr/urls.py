@@ -16,7 +16,11 @@ urlpatterns = patterns('',
     url(r'^i18n/', include('django.conf.urls.i18n')),
     
     url(r'^file/', include('djangofr.repository.urls')),
+    
+    url(r'^cat/(?P<cat_id>\d+)/', 'djangofr.views.cat_show', name='category_view'),
 
+    url(r'^myfiles/', 'djangofr.views.user_files', name='my_files'),
+    
     # Static content #### FOR DEVELOPMENT!! ####
     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': 'uploads'}),

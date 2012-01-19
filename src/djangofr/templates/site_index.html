@@ -10,7 +10,7 @@
     <h3>{% trans "Public document list" %}</h3>
 
     <div class="row">
-        <div class="span3 offset5">
+        <div class="span4 offset5">
             <div class="pagination">
                 <span class="step-links">
                     {% if file.has_previous %}
@@ -24,6 +24,12 @@
             </div>
         </div>
     </div>
+    
+    {% if user.is_authenticated %}
+        <div class="info">
+            <p>{% trans "Remember that no private files are shown here. Instead you will have to go to -My Files- section."%}</p>
+        </div>
+    {% endif %}
     
     {% for object in file.object_list %}
         <div id="object">
@@ -42,6 +48,8 @@
                 </ul>
             </div>
         </div>
+    {% empty %}
+        <p>{% trans "No files." %}</p>
     {% endfor %}
 {% endblock %}
 
@@ -49,9 +57,11 @@
     <h3>{% trans "Other categories" %}</h3>
     <ul class="unstyled">
     {% for category in categories %}
-        <li>{{ category.name }}</li>
+        <li><a href="{% url category_view category.id %}">{{ category.name }}</a></li>
     {% empty %}
         <p>{% trans "The aren't any categories." %}</p>
     {% endfor %}
+        <hr>
+        <li><a href="{% url my_files %}">{% trans "My files" %}</a></li>
     </ul>
 {% endblock %}

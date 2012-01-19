@@ -31,8 +31,27 @@ body {
 }
 
 .pagination {
+    height: 20px;
+    margin: 0px;
 }
 
 .step-links {
     
+}
+
+.info {
+    background: #9AC0CD;
+    border: 1px solid #CCC;
+    padding: 10px;
+    margin: 15px;
+    color: #FFF;
+    height: 18px;
+    line-height: 20px;
+}
+
+.usermenu {
+    float: right;
+    margin-top: -7px;
+    margin-bottom: -10px;
+    margin-right: 25px;
 }

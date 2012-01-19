@@ -35,16 +35,22 @@
                 
                 <div class="row">
                     <div class="span16">
+                        <div class="usermenu">
                         {% trans "Hi," %}
                         {% if user.is_authenticated %}
                             {{ user.username }}. <a href="{% url auth_logout %}">{% trans "Logout" %}</a>
+                            {% if user.is_staff %}
+                                | <a href="{% url admin:index %}">{% trans "Administration" %}</a>
+                            {% endif %}
                         {% else %}
                             {% trans "anonymous." %} <a href="{% url auth_login %}">{% trans "Login" %}</a> | 
                             <a href="{% url registration_register %}">{% trans "Register" %}</a>
-                            
                         {% endif%}
+                        </div>
                     </div>
                 </div>
+                
+                <hr>
                 
                 <div class="row">
                     <div class="span12">
