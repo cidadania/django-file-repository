@@ -10,6 +10,7 @@ class Category(models.Model):
     """
     name = models.CharField(_('Category name'), max_length=100,
         help_text=_('Name of the category. 100 chars maximum.'))
+    description = models.TextField(_('Description'))
     pub_date = models.DateTimeField(auto_now_add=True)
     last_mod = models.DateTimeField(auto_now_add=True)
 
