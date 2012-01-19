@@ -19,7 +19,7 @@ msgstr ""
 
 #: models.py:11
 msgid "Category name"
-msgstr "Nombre de la caregoría"
+msgstr "Nombre de la categoría"
 
 #: models.py:12
 msgid "Name of the category. 100 chars maximum."

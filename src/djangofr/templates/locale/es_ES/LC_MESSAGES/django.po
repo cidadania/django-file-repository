@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-19 16:08+0100\n"
+"POT-Creation-Date: 2012-01-19 20:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,425 +17,95 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: registration/admin.py:23
-msgid "Activate users"
-msgstr ""
-
-#: registration/admin.py:43
-msgid "Re-send activation emails"
-msgstr ""
-
-#: registration/forms.py:35 registration/templates/registration/login.html:15
-#: registration/templates/registration/registration_form.html:20
-msgid "Username"
-msgstr ""
-
-#: registration/forms.py:36
-msgid "This value must contain only letters, numbers and underscores."
-msgstr ""
-
-#: registration/forms.py:39
-msgid "E-mail"
-msgstr ""
-
-#: registration/forms.py:41 registration/templates/registration/login.html:25
-#: registration/templates/registration/registration_form.html:52
-msgid "Password"
-msgstr ""
-
-#: registration/forms.py:43
-#: registration/templates/registration/registration_form.html:68
-msgid "Password (again)"
-msgstr ""
-
-#: registration/forms.py:55
-msgid "A user with that username already exists."
-msgstr ""
-
-#: registration/forms.py:67
-msgid "The two password fields didn't match."
-msgstr ""
-
-#: registration/forms.py:78
-msgid "I have read and agree to the Terms of Service"
-msgstr ""
-
-#: registration/forms.py:79
-msgid "You must agree to the terms to register"
-msgstr ""
-
-#: registration/forms.py:95
-msgid ""
-"This email address is already in use. Please supply a different email "
-"address."
-msgstr ""
-
-#: registration/forms.py:122
-msgid ""
-"Registration using free email addresses is prohibited. Please supply a "
-"different email address."
-msgstr ""
-
-#: registration/models.py:168
-msgid "user"
-msgstr ""
-
-#: registration/models.py:169
-msgid "activation key"
-msgstr ""
-
-#: registration/models.py:174
-msgid "registration profile"
-msgstr ""
-
-#: registration/models.py:175
-msgid "registration profiles"
-msgstr ""
-
-#: registration/templates/registration/activate.html:4
-msgid "Activation failed"
-msgstr ""
-
-#: registration/templates/registration/activate.html:9
-msgid "User activation failed"
-msgstr ""
-
-#: registration/templates/registration/activate.html:10
-msgid "The activation key you used probably expired or have been already used."
-msgstr ""
-
-#: registration/templates/registration/activate.html:11
-#: registration/templates/registration/activation_complete.html:11
-#: registration/templates/registration/registration_complete.html:11
-msgid "Go back home"
-msgstr ""
-
-#: registration/templates/registration/activation_complete.html:4
-msgid "Activation complete"
-msgstr ""
-
-#: registration/templates/registration/activation_complete.html:9
-msgid "User activation complete"
-msgstr ""
-
-#: registration/templates/registration/activation_complete.html:10
-msgid ""
-"The activation process has ended, you can now start using your account. Yay!"
-msgstr ""
-
-#: registration/templates/registration/login.html:4
-#: registration/templates/registration/login.html:12
-msgid "User login"
-msgstr ""
-
-#: registration/templates/registration/login.html:38 templates/base.html:47
-msgid "Login"
-msgstr ""
-
-#: registration/templates/registration/login.html:47
-msgid "Helpful links"
-msgstr ""
-
-#: registration/templates/registration/login.html:48
-msgid "Change your password"
-msgstr ""
-
-#: registration/templates/registration/login.html:49
-msgid "Sign up!"
-msgstr ""
-
-#: registration/templates/registration/logout.html:4
-#: registration/templates/registration/logout.html:8
-msgid "Logged out"
-msgstr ""
-
-#: registration/templates/registration/logout.html:9
-msgid "You've been logged out."
-msgstr ""
-
-#: registration/templates/registration/logout.html:12
-msgid "Go back"
-msgstr ""
-
-#: registration/templates/registration/registration_complete.html:4
-#: registration/templates/registration/registration_complete.html:9
-msgid "Registration complete"
-msgstr ""
-
-#: registration/templates/registration/registration_complete.html:10
-msgid ""
-"The registration process has ended, we have sent you an email with your user "
-"and password."
-msgstr ""
-
-#: registration/templates/registration/registration_form.html:4
-#: registration/templates/registration/registration_form.html:11
-msgid "User registration"
-msgstr ""
-
-#: registration/templates/registration/registration_form.html:36
-msgid "E-mail (optional)"
-msgstr ""
-
-#: registration/templates/registration/registration_form.html:83
-#: templates/base.html:48
-msgid "Register"
-msgstr ""
-
-#: repository/models.py:11
-msgid "Category name"
-msgstr ""
-
-#: repository/models.py:12
-msgid "Name of the category. 100 chars maximum."
-msgstr ""
-
-#: repository/models.py:13
-msgid "Description"
-msgstr ""
-
-#: repository/models.py:19
-msgid "Category"
-msgstr ""
-
-#: repository/models.py:20
-msgid "Categories"
-msgstr ""
-
-#: repository/models.py:30 taggit/models.py:10
-msgid "Name"
-msgstr ""
-
-#: repository/models.py:31
-msgid "This will be the visible name of the file."
-msgstr ""
-
-#: repository/models.py:32
-msgid "Description of the file"
-msgstr ""
-
-#: repository/models.py:35
-msgid "File to upload"
-msgstr ""
-
-#: repository/models.py:36
-msgid "Maximum file size is 25MB."
-msgstr ""
-
-#: repository/models.py:37
-msgid "Select the category"
-msgstr ""
-
-#: repository/models.py:38
-msgid "Make public"
-msgstr ""
-
-#: repository/models.py:39
-msgid "Selecting this will make the file available to public."
-msgstr ""
-
-#: repository/models.py:41
-msgid "Allowed users"
-msgstr ""
-
-#: repository/models.py:42
-msgid "Select the users that can see this file."
-msgstr ""
-
-#: repository/models.py:61
-msgid "File"
-msgstr ""
-
-#: repository/models.py:62
-msgid "Files"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:4
-msgid "Files in"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:16
-#: repository/templates/repository/repofile_index.html:17
-#: repository/templates/repository/repofile_user_files.html:16
-msgid "previous"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:18
-#: repository/templates/repository/repofile_index.html:19
-#: repository/templates/repository/repofile_user_files.html:18
-msgid "of"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:20
-#: repository/templates/repository/repofile_index.html:21
-#: repository/templates/repository/repofile_user_files.html:20
-msgid "next"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:29
-#: repository/templates/repository/repofile_index.html:30
-msgid ""
-"Remember that no private files are shown here. Instead you will have to go "
-"to -My Files- section."
-msgstr ""
-
-#: repository/templates/repository/category_list.html:42
-#: repository/templates/repository/repofile_detail.html:35
-#: repository/templates/repository/repofile_detail.html:36
-#: repository/templates/repository/repofile_index.html:43
-#: repository/templates/repository/repofile_user_files.html:36
-msgid "Download"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:45
-#: repository/templates/repository/repofile_detail.html:27
-#: repository/templates/repository/repofile_detail.html:28
-#: repository/templates/repository/repofile_index.html:46
-#: repository/templates/repository/repofile_user_files.html:39
-msgid "Delete"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:54
-#: repository/templates/repository/repofile_index.html:57
-msgid "Other categories"
-msgstr ""
-
-#: repository/templates/repository/category_list.html:59
-#: repository/templates/repository/repofile_index.html:62
-msgid "The aren't any categories."
-msgstr ""
-
-#: repository/templates/repository/repofile_add.html:4
-#: repository/templates/repository/repofile_add.html:6
-msgid "Add new file"
-msgstr ""
-
-#: repository/templates/repository/repofile_add.html:39
-msgid "Cancel"
-msgstr ""
-
-#: repository/templates/repository/repofile_add.html:40
-msgid "Create"
-msgstr ""
-
-#: repository/templates/repository/repofile_detail.html:4
-msgid "View file"
-msgstr ""
-
-#: repository/templates/repository/repofile_detail.html:21
-#: repository/templates/repository/repofile_detail.html:22
-msgid "Edit"
-msgstr ""
-
-#: repository/templates/repository/repofile_detail.html:40
-msgid "No download available."
-msgstr ""
-
-#: repository/templates/repository/repofile_detail.html:43
-msgid "Tags:"
-msgstr ""
-
-#: repository/templates/repository/repofile_index.html:4
-msgid "YOURNAME repository"
-msgstr ""
-
-#: repository/templates/repository/repofile_index.html:10
-msgid "Public document list"
-msgstr ""
-
-#: repository/templates/repository/repofile_index.html:52
-msgid "No files."
-msgstr ""
-
-#: repository/templates/repository/repofile_index.html:65
-msgid "My files"
-msgstr ""
-
-#: repository/templates/repository/repofile_user_files.html:4
-msgid "Your files"
-msgstr ""
-
-#: repository/templates/repository/repofile_user_files.html:45
-msgid "You don't have any private files."
-msgstr ""
-
-#: taggit/forms.py:21
-msgid "Please provide a comma-separated list of tags."
-msgstr ""
-
-#: taggit/managers.py:39 taggit/models.py:57
-msgid "Tags"
-msgstr ""
-
-#: taggit/managers.py:40
-msgid "A comma-separated list of tags."
-msgstr ""
-
-#: taggit/models.py:11
-msgid "Slug"
-msgstr ""
-
-#: taggit/models.py:56
-msgid "Tag"
-msgstr ""
-
-#: taggit/models.py:63
-#, python-format
-msgid "%(object)s tagged with %(tag)s"
-msgstr ""
-
-#: taggit/models.py:113
-msgid "Object id"
-msgstr ""
-
-#: taggit/models.py:117 taggit/models.py:123
-msgid "Content type"
-msgstr ""
-
-#: taggit/models.py:159
-msgid "Tagged Item"
-msgstr ""
-
-#: taggit/models.py:160
-msgid "Tagged Items"
-msgstr ""
-
-#: templates/base.html:5
+#: base.html:5
 msgid "Repository"
-msgstr ""
+msgstr "Repositorio"
 
-#: templates/base.html:30
+#: base.html:30
 msgid "Logotype"
-msgstr ""
+msgstr "Logotipo"
 
-#: templates/base.html:39
+#: base.html:39
 msgid "Hi,"
-msgstr ""
+msgstr "Hola,"
 
-#: templates/base.html:41
+#: base.html:41
 msgid "Logout"
-msgstr ""
+msgstr "Salir"
 
-#: templates/base.html:43
+#: base.html:43
 msgid "Administration"
-msgstr ""
+msgstr "Administración"
 
-#: templates/base.html:44
+#: base.html:44
 msgid "Add file"
-msgstr ""
+msgstr "Añadir archivo"
 
-#: templates/base.html:47
+#: base.html:47
 msgid "anonymous."
-msgstr ""
+msgstr "anónimo."
 
-#: templates/errors/not_allowed.html:4
+#: base.html:47
+msgid "Login"
+msgstr "Entrar"
+
+#: base.html:48
+msgid "Register"
+msgstr "Registrarse"
+
+#: errors/not_allowed.html:4
 msgid "Not allowed"
-msgstr ""
+msgstr "No permitido"
 
-#: templates/errors/not_allowed.html:12
+#: errors/not_allowed.html:12
 msgid "You are not allowed to access here."
-msgstr ""
+msgstr "No estás autorizado para acceder aquí."
 
-#: templates/errors/not_allowed.html:13
+#: errors/not_allowed.html:13
 msgid "You can go back to"
-msgstr ""
+msgstr "Puedes volver a"
+
+#~ msgid "Activate users"
+#~ msgstr "Activar usuarios"
+
+#~ msgid "Re-send activation emails"
+#~ msgstr "Reenviar correo de activación"
+
+#~ msgid "Username"
+#~ msgstr "Nombre de usuario"
+
+#~ msgid "This value must contain only letters, numbers and underscores."
+#~ msgstr "Este campo debe contener sólo letras, números y guiones bajos."
+
+#~ msgid "E-mail"
+#~ msgstr "Correo electrónico"
+
+#~ msgid "Password"
+#~ msgstr "Contraseña"
+
+#~ msgid "Password (again)"
+#~ msgstr "Contraseña (otra vez)"
+
+#~ msgid "A user with that username already exists."
+#~ msgstr "Ya existe un usuario con ese nombre."
+
+#~ msgid "The two password fields didn't match."
+#~ msgstr "Las dos contraseñas no coinciden."
+
+#~ msgid "I have read and agree to the Terms of Service"
+#~ msgstr "He leido y acepto los términos de servicio"
+
+#~ msgid "You must agree to the terms to register"
+#~ msgstr "Debes aceptar los términos para registrarte"
+
+#~ msgid ""
+#~ "This email address is already in use. Please supply a different email "
+#~ "address."
+#~ msgstr ""
+#~ "Esta dirección de correo ya está en uso. Por favor, escribe una dirección "
+#~ "diferente."
+
+#~ msgid ""
+#~ "Registration using free email addresses is prohibited. Please supply a "
+#~ "different email address."
+#~ msgstr "El registro mediante direcciones de correo gratuitas está prohibido"
