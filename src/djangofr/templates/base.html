@@ -30,7 +30,19 @@
                             <img src="{{ STATIC_URL }}/img/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/>
                         </a>
                     </div>
+                                            <form action="/i18n/setlang/" method="post" style="float:right;">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{% url home %}" />
+                            <select name="language" style="width:100px;">
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+                                {% endfor %}
+                            </select>
+                            <input type="submit" value="{% trans 'Go' %}" />
+                        </form>
                     <h1 style="line-height:110px;">{% block pagetitle %}{% endblock %} <small>{% block pagedescription %}{% endblock %}</small></h1>
+                    
                 </div>
                 
                 <div class="row">

@@ -177,7 +177,7 @@ msgstr "Repositorio NOMBRE"
 
 #: templates/repository/repofile_index.html:10
 msgid "Public document list"
-msgstr "Kusta de documentos públicos"
+msgstr "Lista de documentos públicos"
 
 #: templates/repository/repofile_index.html:52
 msgid "No files."
