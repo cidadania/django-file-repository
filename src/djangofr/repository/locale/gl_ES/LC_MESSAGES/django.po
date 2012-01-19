@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-19 16:09+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:11
+msgid "Category name"
+msgstr "Nome da categoría"
+
+#: models.py:12
+msgid "Name of the category. 100 chars maximum."
+msgstr "Nome da categoría. 100 caracteres máximo."
+
+#: models.py:13
+msgid "Description"
+msgstr "Descrición"
+
+#: models.py:19
+msgid "Category"
+msgstr "Categoría"
+
+#: models.py:20
+msgid "Categories"
+msgstr "Categorías"
+
+#: models.py:30
+msgid "Name"
+msgstr "Nome"
+
+#: models.py:31
+msgid "This will be the visible name of the file."
+msgstr "Este será o nome público do arquivo."
+
+#: models.py:32
+msgid "Description of the file"
+msgstr "Descrición do arquivo"
+
+#: models.py:35
+msgid "File to upload"
+msgstr "Arquivos a cargar"
+
+#: models.py:36
+msgid "Maximum file size is 25MB."
+msgstr "O tamaño máximo é 25MB"
+
+#: models.py:37
+msgid "Select the category"
+msgstr "Seleccione a categoría"
+
+#: models.py:38
+msgid "Make public"
+msgstr "Público"
+
+#: models.py:39
+msgid "Selecting this will make the file available to public."
+msgstr "Seleccionando isto fará o arquivo dispoñible ao público."
+
+#: models.py:41
+msgid "Allowed users"
+msgstr "Usuarios permitidos"
+
+#: models.py:42
+msgid "Select the users that can see this file."
+msgstr "Selecciona os usuarios que poden ver este arquivo."
+
+#: models.py:61
+msgid "File"
+msgstr "Arquivo"
+
+#: models.py:62
+msgid "Files"
+msgstr "Arquivos"
+
+#: templates/repository/category_list.html:4
+msgid "Files in"
+msgstr "Arquivos en"
+
+#: templates/repository/category_list.html:16
+#: templates/repository/repofile_index.html:17
+#: templates/repository/repofile_user_files.html:16
+msgid "previous"
+msgstr "anterior"
+
+#: templates/repository/category_list.html:18
+#: templates/repository/repofile_index.html:19
+#: templates/repository/repofile_user_files.html:18
+msgid "of"
+msgstr "de"
+
+#: templates/repository/category_list.html:20
+#: templates/repository/repofile_index.html:21
+#: templates/repository/repofile_user_files.html:20
+msgid "next"
+msgstr "seguinte"
+
+#: templates/repository/category_list.html:29
+#: templates/repository/repofile_index.html:30
+msgid ""
+"Remember that no private files are shown here. Instead you will have to go "
+"to -My Files- section."
+msgstr "Recorda que os arquivos privados non se mostran aquí. Terás que ir a "
+"sección -Os meus arquivos-."
+
+#: templates/repository/category_list.html:42
+#: templates/repository/repofile_detail.html:35
+#: templates/repository/repofile_detail.html:36
+#: templates/repository/repofile_index.html:43
+#: templates/repository/repofile_user_files.html:36
+msgid "Download"
+msgstr "Descargar"
+
+#: templates/repository/category_list.html:45
+#: templates/repository/repofile_detail.html:27
+#: templates/repository/repofile_detail.html:28
+#: templates/repository/repofile_index.html:46
+#: templates/repository/repofile_user_files.html:39
+msgid "Delete"
+msgstr "Eliminar"
+
+#: templates/repository/category_list.html:54
+#: templates/repository/repofile_index.html:57
+msgid "Other categories"
+msgstr "Outras categorías"
+
+#: templates/repository/category_list.html:59
+#: templates/repository/repofile_index.html:62
+msgid "The aren't any categories."
+msgstr "Non hai ningunha categoría."
+
+#: templates/repository/repofile_add.html:4
+#: templates/repository/repofile_add.html:6
+msgid "Add new file"
+msgstr "Engadir arquivo"
+
+#: templates/repository/repofile_add.html:39
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/repository/repofile_add.html:40
+msgid "Create"
+msgstr "Crear"
+
+#: templates/repository/repofile_detail.html:4
+msgid "View file"
+msgstr "Ver arquivo"
+
+#: templates/repository/repofile_detail.html:21
+#: templates/repository/repofile_detail.html:22
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/repository/repofile_detail.html:40
+msgid "No download available."
+msgstr "Non hai descarga."
+
+#: templates/repository/repofile_detail.html:43
+msgid "Tags:"
+msgstr "Etiquetas:"
+
+#: templates/repository/repofile_index.html:4
+msgid "YOURNAME repository"
+msgstr "Repositorio NOME"
+
+#: templates/repository/repofile_index.html:10
+msgid "Public document list"
+msgstr "Lista de documentos públicos"
+
+#: templates/repository/repofile_index.html:52
+msgid "No files."
+msgstr "Sen arquivos."
+
+#: templates/repository/repofile_index.html:65
+msgid "My files"
+msgstr "Os meus arquivos"
+
+#: templates/repository/repofile_user_files.html:4
+msgid "Your files"
+msgstr "Os teus arquivos"
+
+#: templates/repository/repofile_user_files.html:45
+msgid "You don't have any private files."
+msgstr "Non tes arquivos privados."
