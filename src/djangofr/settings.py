@@ -1,6 +1,54 @@
-# Django settings for cidadania_docrepo project.
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2012 Cidadanía Coop.
+# Written by: Oscar Carballal Prego <oscar.carballal@cidadania.coop>
+#
+# This file is part of django-file-repository.
+#
+# django-file-repository is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Foobar is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with django-file-repository.  If not, see <http://www.gnu.org/licenses/>.
 
-# Get the current directory
+#################################################
+# SPECIFIC DJANGO-FILE-REPOSITORY CONFIGURATION #
+#################################################
+
+# django-registration settings
+ACCOUNT_ACTIVATION_DAYS = 7
+#EMAIL_HOST=""
+#EMAIL_PORT=
+#EMAIL_HOST_USER=""
+#EMAIL_HOST_PASSWORD=""
+
+# django-auth settings
+LOGIN_URL="/user/login"
+LOGIN_REDIRECT_URL="/"
+LOGOUT_URL="/user/logout"
+
+# django-tagging settings
+FORCE_LOWERCASE_TAGS = True
+
+# Set the available languages in the platform
+LANGUAGES = (
+    ('es', 'Espanol'),
+    ('en', 'English'),
+    ('gl', 'Galego'),
+)
+
+##################################
+# STANDARD DJANGO PROJECT CONFIG #
+##################################
+
+# Get the current working directory
 import os
 cwd = os.path.dirname(os.path.realpath(__file__))
 
@@ -24,75 +72,31 @@ DATABASES = {
     }
 }
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
+# i18n and l10n configuration
 TIME_ZONE = 'Europe/Madrid'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'es-es'
-LANGUAGES = (
-    ('es', 'Espanol'),
-    ('en', 'English'),
-    ('gl', 'Galego'),
-)
-
 SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
 USE_I18N = True
-
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
 USE_L10N = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
+# Media and static files directories
 MEDIA_ROOT = cwd + '/uploads/'
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/uploads'
-
-# Absolute path to the directory static files should be collected to.
-# Don't put anything in this directory yourself; store your static files
-# in apps' "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = cwd + '/static/'
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static'
-
-# URL prefix for admin static files -- CSS, JavaScript and images.
-# Make sure to use a trailing slash.
-# Examples: "http://foo.com/static/admin/", "/static/admin/".
 ADMIN_MEDIA_PREFIX = '/static/admin/'
-
-# Additional locations of static files
 STATICFILES_DIRS = (
     (cwd + '/static_files/'),
 )
 
-# List of finder classes that know how to find static files in
-# various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
 SECRET_KEY = 'mzr2%=l*+p87^9t1x@0km^ej*ge0+32v657d)lp@sh$i)sms4g'
 
-# List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
@@ -140,20 +144,7 @@ INSTALLED_APPS = (
     'taggit',
 )
 
-# django-registration settings
-ACCOUNT_ACTIVATION_DAYS = 7
-#EMAIL_HOST=""
-#EMAIL_PORT=
-#EMAIL_HOST_USER=""
-#EMAIL_HOST_PASSWORD=""
 
-# django-auth settings
-LOGIN_URL="/user/login"
-LOGIN_REDIRECT_URL="/"
-LOGOUT_URL="/user/logout"
-
-# django-tagging settings
-FORCE_LOWERCASE_TAGS = True
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
