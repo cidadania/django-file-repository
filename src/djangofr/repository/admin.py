@@ -6,6 +6,12 @@ from djangofr.repository.models import Category, RepoFile
 class CategoryAdmin(admin.ModelAdmin):
 
     """
+    Category model administration.
+    
+    :list_display: name, pub_date, last_mod
+    :search_fields: name
+    
+    :versionadded 0.2b:
     """
     list_display = ('name', 'pub_date', 'last_mod')
     search_fields = ('name',)
@@ -13,6 +19,14 @@ class CategoryAdmin(admin.ModelAdmin):
 class RepoFileAdmin(admin.ModelAdmin):
 
     """
+    RepoFile administration model. At save time we change the author to the
+    current user (even if the user selected another author) and save. The user
+    change is meant to be edited in file edit.
+    
+    :display: name, category, description, public, pub_date
+    :search_fields: name, category, description
+    
+    :versionadded: 0.2b
     """
     list_display = ('name', 'category', 'description', 'public', 'pub_date')
     search_fields = ('name', 'category', 'description')

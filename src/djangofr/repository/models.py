@@ -7,6 +7,12 @@ from djangofr.taggit.managers import TaggableManager
 class Category(models.Model):
 
     """
+    Category data model. This model stores possible categories or groups where
+    we store the RepoFiles.
+    
+    :fields: name, description, pub_date, last_mod
+    
+    :versionadded: 0.1
     """
     name = models.CharField(_('Category name'), max_length=100,
         help_text=_('Name of the category. 100 chars maximum.'))
@@ -26,6 +32,19 @@ class Category(models.Model):
 class RepoFile(models.Model):
 
     """
+    RepoFile data model. This model is meant to store all the files and information
+    about the files.
+    
+    :fields: name, description, front, stored_file, category, public, allowed_users,
+    tags, pub_date, last_mod, author
+    
+    Methods:
+    
+    human_file_size
+      Returns the file size in human readable form, since the get_size method returns
+      the byte count.
+      
+    :versionadded: 0.1
     """
     name = models.CharField(_('Name'), max_length=250,
         help_text=_('This will be the visible name of the file.'))
