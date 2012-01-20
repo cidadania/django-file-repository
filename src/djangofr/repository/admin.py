@@ -21,7 +21,7 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from djangofr.repository.models import Category, RepoFile
+from repository.models import Category, RepoFile
 
 class CategoryAdmin(admin.ModelAdmin):
 
@@ -31,7 +31,7 @@ class CategoryAdmin(admin.ModelAdmin):
     :list_display: name, pub_date, last_mod
     :search_fields: name
     
-    :versionadded 0.2b:
+    .. versionadded:: 0.2b
     """
     list_display = ('name', 'pub_date', 'last_mod')
     search_fields = ('name',)
@@ -46,7 +46,7 @@ class RepoFileAdmin(admin.ModelAdmin):
     :display: name, category, description, public, pub_date
     :search_fields: name, category, description
     
-    :versionadded: 0.2b
+    .. versionadded:: 0.2b
     """
     list_display = ('name', 'category', 'description', 'public', 'pub_date')
     search_fields = ('name', 'category', 'description')

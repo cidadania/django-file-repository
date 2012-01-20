@@ -41,6 +41,8 @@ def index(request):
     shown here. We also get the categories context to show them in the template.
     
     :contexts: file, categories
+    
+    .. versionadded:: 0.2b
     """
     file_list = RepoFile.objects.filter(public=True)
     paginator = Paginator(file_list, 16, orphans=3)
@@ -68,6 +70,8 @@ class ViewFile(DetailView):
     is allowed ot is an admin, the view returns the file.
     
     :context: file
+    
+    .. versionadded:: 0.2b
     """
     context_object_name = 'file'
     template_name = 'repository/repofile_detail.html'
@@ -102,6 +106,8 @@ def add_file(request):
     store the author.
     
     :context: form
+    
+    .. versionadded:: 0.2b
     """
     file_form = RepoFileForm(request.POST or None)
     
@@ -133,6 +139,8 @@ class DeleteFile(DeleteView):
     """
     This view deletes the file the admin selects. It uses the default template
     for the class view.
+    
+    .. versionadded:: 0.2b
     """
     context_object_name = 'file'
     success_url = '/'
@@ -152,6 +160,8 @@ def cat_show(request, cat_id):
     files.
     
     :context: file, categories, current_category
+    
+    .. versionadded:: 0.2b
     """
     # Current selected category
     cat = get_object_or_404(Category, pk=cat_id)
@@ -185,6 +195,8 @@ def user_files(request):
     contains only 3 objects, they're added to the last page.
     
     :context: file
+    
+    .. versionadded:: 0.2b
     """
     file_list = RepoFile.objects.filter(allowed_users__id=request.user.id)
 

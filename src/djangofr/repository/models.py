@@ -22,7 +22,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 
-from djangofr.taggit.managers import TaggableManager
+from taggit.managers import TaggableManager
 
 class Category(models.Model):
 
@@ -32,7 +32,7 @@ class Category(models.Model):
     
     :fields: name, description, pub_date, last_mod
     
-    :versionadded: 0.1
+    .. versionadded:: 0.1
     """
     name = models.CharField(_('Category name'), max_length=100,
         help_text=_('Name of the category. 100 chars maximum.'))
@@ -58,13 +58,13 @@ class RepoFile(models.Model):
     :fields: name, description, front, stored_file, category, public, allowed_users,
     tags, pub_date, last_mod, author
     
-    Methods:
+    **Methods:**
     
-    human_file_size
+    **human_file_size**
       Returns the file size in human readable form, since the get_size method returns
       the byte count.
       
-    :versionadded: 0.1
+    .. versionadded:: 0.1
     """
     name = models.CharField(_('Name'), max_length=250,
         help_text=_('This will be the visible name of the file.'))
