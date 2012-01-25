@@ -30,8 +30,8 @@ from django.template import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from repository.models import Category, RepoFile
-from repository.forms import RepoFileForm
+from djangofr.repository.models import Category, RepoFile
+from djangofr.repository.forms import RepoFileForm
 
 
 def index(request):

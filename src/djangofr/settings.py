@@ -139,9 +139,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'registration',
-    'repository',
-    'taggit',
+    'djangofr.registration',
+    'djangofr.repository',
+    'djangofr.taggit',
 )
 
 
