@@ -21,7 +21,7 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from djangofr.repository.models import Category, RepoFile
+from repository.models import Category, RepoFile
 
 class CategoryAdmin(admin.ModelAdmin):
 

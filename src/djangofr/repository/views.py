@@ -30,8 +30,8 @@ from django.template import RequestContext
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from djangofr.repository.models import Category, RepoFile
-from djangofr.repository.forms import RepoFileForm
+from repository.models import Category, RepoFile
+from repository.forms import RepoFileForm
 
 
 def index(request):
@@ -114,7 +114,7 @@ def add_file(request):
     if request.user.is_staff:
         if request.method == 'POST':
             if file_form.is_valid():
-                file_form_uncommited = file.form.save(commit=False)
+                file_form_uncommited = file_form.save(commit=False)
                 file_form_uncommited.author = request.user
                 file_form_uncommited.save()
                 

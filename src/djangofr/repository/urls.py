@@ -21,7 +21,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 
-from djangofr.repository.views import DeleteFile, ViewFile
+from repository.views import DeleteFile, ViewFile
 
 urlpatterns = patterns('repository.views',
 
