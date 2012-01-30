@@ -21,9 +21,9 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 
-from repository.views import DeleteFile, ViewFile
+from djangofr.repository.views import DeleteFile, ViewFile
 
-urlpatterns = patterns('repository.views',
+urlpatterns = patterns('djangofr.repository.views',
 
     url(r'^add/$', 'add_file', name='add_file'),
     
