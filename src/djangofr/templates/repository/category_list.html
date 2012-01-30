@@ -3,8 +3,13 @@
 
 {% block title %}{% trans "Files in" %} {{ current_category.name }}{% endblock %}
 
-{% block pagetitle %}{{ current_category.name }}{% endblock %}
-{% block pagedescription %}{{ current_category.description }}{% endblock %}
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li><a href="{% url home %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+        <li><a href="{% url home %}">{% trans "Category index" %}</a> <span class="divider">/</span></li>
+        <li class="active"><a href="{% url home %}">{{ file.name }}</a> <span class="divider">/</span></li>
+    </ul>
+{% endblock %}
 
 {% block content %}
 

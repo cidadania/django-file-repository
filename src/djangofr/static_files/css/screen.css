@@ -2,6 +2,9 @@ body {
     background: #FAFAFA;
 }
 
+.breadcrumb {
+    margin-top: -20px;
+}
 #object {
     float: left;
     width: 150px;

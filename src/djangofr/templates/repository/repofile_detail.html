@@ -3,8 +3,13 @@
 
 {% block title %}{% trans "View file" %} {{ file.name }}{% endblock %}
 
-{% block pagetitle %}{{ file.name }}{% endblock %}
-{% block pagedescription %}Siome kind of data{% endblock %}
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li><a href="{% url home %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+        <li><a href="{% url home %}">{% trans "Repository" %}</a> <span class="divider">/</span></li>
+        <li class="active"><a href="{% url home %}">{{ file.name }}</a> <span class="divider">/</span></li>
+    </ul>
+{% endblock %}
 
 {% block content %}
     <h3>{{ file.name }}</h3>

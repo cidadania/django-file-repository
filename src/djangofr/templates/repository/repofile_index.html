@@ -3,8 +3,11 @@
 
 {% block title %}{% trans "YOURNAME repository" %}{% endblock %}
 
-{% block pagetitle %}File repository{% endblock %}
-{% block pagedescription %}Example repository{% endblock %}
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li class="active"><a href="{% url home %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+    </ul>
+{% endblock %}
 
 {% block content %}
     <h3>{% trans "Public document list" %}</h3>
