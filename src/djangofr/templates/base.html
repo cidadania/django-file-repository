@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es-ES" xml:lang="es-ES">
     <head>
-        <title>{% block title %}{% trans "Repository" %}{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/bootstrap.css" media="screen" />
         <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}/css/screen.css"/>
         <link rel="shortcut icon" href="{{ STATIC_URL }}/assets/favicon.ico" type="image/ico"/>
@@ -24,30 +24,13 @@
         <div class="container">
             <div class="content">
             
-                <div class="page-header" style="min-height:110px;">
-                    <div id="logo" style="margin:5px;float:left;display:block;">
+                <div id="header" style="height:100px;line-height:100px;margin-top:30px;">
+                    <div class="logo" style="margin:10px;float:left;display:block;"> 
                         <a href="{% url home %}">
                             <img src="{{ STATIC_URL }}/img/logo.png" alt="{% trans 'Logotype' %}" title="{% trans 'Logotype' %}"/>
                         </a>
                     </div>
-                                            <form action="/i18n/setlang/" method="post" style="float:right;">
-                            {% csrf_token %}
-                            <input name="next" type="hidden" value="{% url home %}" />
-                            <select name="language" style="width:100px;">
-                                {% get_language_info_list for LANGUAGES as languages %}
-                                {% for language in languages %}
-                                    <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
-                                {% endfor %}
-                            </select>
-                            <input type="submit" value="{% trans 'Go' %}" />
-                        </form>
-                    <h1 style="line-height:110px;">{% block pagetitle %}{% endblock %} <small>{% block pagedescription %}{% endblock %}</small></h1>
-                    
-                </div>
-                
-                <div class="row">
-                    <div class="span16">
-                        <div class="usermenu">
+                    <div class="menu">
                         {% trans "Hi," %}
                         {% if user.is_authenticated %}
                             {{ user.username }}. <a href="{% url auth_logout %}">{% trans "Logout" %}</a>
@@ -59,11 +42,30 @@
                             {% trans "anonymous." %} <a href="{% url auth_login %}">{% trans "Login" %}</a> | 
                             <a href="{% url registration_register %}">{% trans "Register" %}</a>
                         {% endif%}
-                        </div>
+                        {% comment %}
+                        <form action="/i18n/setlang/" method="post" style="float:right;margin-top:40px;">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{% url home %}" />
+                            <select name="language" style="width:100px;" onchange="this.form.submit()">
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                        {% endcomment %}
+                        <form action="/i18n/setlang/" method="post" style="float:right;margin-top:40px;">{% csrf_token %}
+                            <input name="next" type="hidden" value="/" />
+                            <select id="language" name="language" style="width:100px;" onchange="this.form.submit()">
+                                <option>{% trans "Language" %}</option>
+                                {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}">{{ lang.1 }}</option>
+                                {% endfor %}
+                            </select>
+                            <a href="{% url my_files %}">{% trans "My files" %}</a>
+                        </form>
                     </div>
                 </div>
-                
-                <hr>
                 
                 <div class="row">
                     <div class="span12">
@@ -79,7 +81,9 @@
             </div>
 
             <footer>
+                {% block footer %}
                 <p>© Cidadania Sociedade Cooperativa Galega 2011</p>
+                {% endblock %}
             </footer>
         </div>
     </body>
