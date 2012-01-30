@@ -22,6 +22,9 @@
 # SPECIFIC DJANGO-FILE-REPOSITORY CONFIGURATION #
 #################################################
 
+# Customization
+REPOSITORY_NAME = "MyRepo"
+
 # django-registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
 #EMAIL_HOST=""
