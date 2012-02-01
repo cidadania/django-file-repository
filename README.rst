@@ -1,13 +1,28 @@
 django-file-repository
 ======================
 
-This program is a simple file storage platform.
+Current version: 0.2.1
+
+This program is a file storage platform.
+
+Features
+--------
+
+ * Public & private files
+ * Categories & Tagging
+ * i18n (currently spanish, galician and english)
+ * User registration and personal zone
+
+  *Future Features*
+   * Cover image based on file content (if not, put generic filetype icon)
+   * Persistent URLs
+   * Online Multimedia viewer based on HTML5
 
 How to install
 --------------
 
-Standalone development
-......................
+Standalone
+..........
 
 To use djangofr alone (in development mode) just download the code and execute:
 ::
@@ -19,19 +34,18 @@ After building the database and creating the administration user you have to run
 
 Et voilà!
 
-Standalone stable
-.................
-
-Not written yet.
-
 Pluggable
 .........
 
-The other way is to use djangofr as a pluggable application, in which case you will
-have to copy the **repository** directory onto your project and create an url
-to manage the repo.
+The other way is to use django-file-repository is as a pluggable application,
+in which case you will have to install it through the *pip* or *easy_install*
+commands.
 
-.. warning:: This secion has to be extended.
+**Note** The pluggable version comes with no templates. For possible example
+templates you can download this project and study/use the templates there.
+
+.. warning:: The cheese shop version can be outdated. If it's the case, please
+             leave am issue here.
 
 Documentation
 -------------
