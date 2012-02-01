@@ -19,10 +19,12 @@
 # along with django-file-repository.  If not, see <http://www.gnu.org/licenses/>.
 
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required, permission_required
+from django.core.urlresolvers import reverse
 
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404, redirect
@@ -131,7 +133,21 @@ def edit_file(request, file_id):
 
     """
     """
-    pass
+    cur_file = get_object_or_404(RepoFile, pk=file_id)
+
+    editfile_form = RepoFileForm(request.POST or None, instance=cur_file)
+    
+    if request.method == "POST":
+        if editfile_form.is_valid():
+            editfile_form_uncommited = editfile_form.save(commit=False)
+            editfile_form_uncommited.author = request.user
+            editfile_form_uncommited.save()
+            
+            return HttpResponseRedirect(reverse('view_file', args=[file_id]))
+            
+    return render_to_response('repository/repofile_edit.html',
+                            {'form': editfile_form, 'file':cur_file},
+                                context_instance=RequestContext(request))
 
 
 class DeleteFile(DeleteView):
@@ -181,12 +197,29 @@ def cat_show(request, cat_id):
     except (EmptyPage, InvalidPage):
         files = paginator.page(paginator.num_pages)
         
-    return render_to_response('repository/category_list.html', {'current_category': cat,
+    return render_to_response('repository/files_per_category.html', {'current_category': cat,
                                                      'file': files,
                                                      'categories': categories},
                                       context_instance=RequestContext(request))
                                     
-                    
+
+class ListCategories(ListView):
+
+    """
+    Returns a list with all the categories in the repository
+    """
+    paginate_by = 120
+    context_object_name = 'category_list'
+    
+    def get_queryset(self):
+        categories = Category.objects.all()
+        
+        return categories
+
+    def get_context_data(self, **kwargs):
+        context = super(ListCategories, self).get_context_data(**kwargs)
+        return context
+        
 def user_files(request):
 
     """
