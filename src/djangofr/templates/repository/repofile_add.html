@@ -3,8 +3,12 @@
 
 {% block title %}{% trans "Add new file" %}{% endblock %}
 
-{% block pagetitle %}{% trans "Add new file" %}{% endblock %}
-{% block pagedescription %}{% endblock %}
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li><a href="{% url home %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+        <li class="active"><a href="{% url add_file %}">{% trans "Add new file" %}</a> <span class="divider">/</span></li>
+    </ul>
+{% endblock %}
 
 {% block content %}
     <div class="row">

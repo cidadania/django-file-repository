@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Delete file" %}{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li><a href="{% url home %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+        <li><a href="{% url category_list %}">{% trans "Repository" %}</a> <span class="divider">/</span></li>
+        <li class="active"><a href="#">{% trans "Delete" %} {{ file.name }}</a> <span class="divider">/</span></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="span16">
+            <form action="" method="post">{% csrf_token %}
+                <h3>{% trans "Delete file" %}</h3>
+                <p>{% trans "Are you sure you want to delete this file? This action cannot be undone" %}.</p>
+
+                <hr />
+                <a href="{% url view_file file.id %}" class="btn small">&laquo; {% trans "Go back" %}</a>
+                <input class="btn small danger" type="submit" value="{% trans 'Delete' %}" />
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

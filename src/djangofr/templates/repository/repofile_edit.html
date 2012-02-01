@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Edit file" %} {{ file.name }}{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li><a href="{% url home %}">{% trans "Home" %}</a> <span class="divider">/</span></li>
+        <li><a href="{% url home %}">{% trans "Repository" %}</a> <span class="divider">/</span></li>
+        <li class="active"><a href="{% url view_file file.id %}">{% trans "Edit" %} {{ file.name }}</a> <span class="divider">/</span></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span12">
+            <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+                
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <span class="help-inline">{{ error|escape }}</span>
+                    {% endfor %}
+                {% endif %}
+            
+                {% for field in form %}
+                    <div class="clearfix {% if form.name.errors %}error{% endif%}">
+                        <label for="prependedInput">{{ field.label }}</label> 
+                        <div class="input"> 
+                            {{ field }}
+                            <span class="help-inline">
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        {{ error|escape }}
+                                    {% endfor %}
+                                {% else %}
+                                    {{ field.help_text }}
+                                {% endif %}
+                            </span>
+                        </div> 
+                    </div>   
+                {% endfor %}
+                
+                <hr>
+                <a href="{% url home %}" class="btn danger small">&laquo; {% trans "Cancel" %}</a>
+                <input class="btn small primary " type="submit" value="{% trans 'Create' %}" />
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+
+{% endblock %}
