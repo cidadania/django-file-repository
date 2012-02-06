@@ -111,7 +111,7 @@ def add_file(request):
     
     .. versionadded:: 0.2b
     """
-    file_form = RepoFileForm(request.POST or None)
+    file_form = RepoFileForm(request.POST or None, request.FILES or None)
     
     if request.user.is_staff:
         if request.method == 'POST':
@@ -119,6 +119,7 @@ def add_file(request):
                 file_form_uncommited = file_form.save(commit=False)
                 file_form_uncommited.author = request.user
                 file_form_uncommited.save()
+                file_form.save_m2m()
                 
                 return redirect('/')
     else:

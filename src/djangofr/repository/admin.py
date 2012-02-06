@@ -50,6 +50,7 @@ class RepoFileAdmin(admin.ModelAdmin):
     """
     list_display = ('name', 'category', 'description', 'public', 'pub_date')
     search_fields = ('name', 'category', 'description')
+    filter_horizontal =  ('allowed_users',)
     
 #    fieldsets = [
 #        (None, {'fields':
