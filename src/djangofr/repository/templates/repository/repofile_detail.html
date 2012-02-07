@@ -16,7 +16,7 @@
     <div class="row">
         <div class="span4">
             <div class="file_detail">
-                <img src="http://placehold.it/150x200" alt="{{ file.name }}" title="{{ file.name }}" />
+                <img src="{{ MEDIA_URL }}{{ object.front.url }}" alt="{{ file.name }}" title="{{ file.name }}" />
                 <!--<img src="{{ file.front }}" alt="{{ file.name }}" title="{{ file.name }}" />-->
                 <div class="options">
                     <ul class="unstyled">

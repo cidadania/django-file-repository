@@ -30,7 +30,7 @@
     
     {% for object in file.object_list %}
         <div id="object">
-            <div class="front"><a href="{% url view_file object.id %}"><img src="http://placehold.it/150x200" alt="File image" title="{{ object.name }}"/></a></div>
+            <div class="front"><a href="{% url view_file object.id %}"><img src="{{ MEDIA_URL }}{{ object.front.url }}" alt="File image" title="{{ object.name }}"/></a></div>
             <div class="filedescription">
                 <h6><a href="{% url view_file object.id %}">{{ object.name }}</a></h6>
                 <p>{{ object.description|truncatewords:16 }}...</p>
