@@ -18,6 +18,19 @@ Features
    * Persistent URLs
    * Online Multimedia viewer based on HTML5
 
+
+Requirements
+------------
+
+ * django-registration
+ * django-taggit
+
+.. note:: Django-file-repository uses the latest version of
+          django-registration, which is not available through pip
+          or easy_install. You can download it from:
+
+          https://bitbucket.org/ubernostrum/django-registration
+
 How to install
 --------------
 

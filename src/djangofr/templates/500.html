@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}500 - Server error{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="span16">
+            <h1 style="font-size:12em;text-align:center;">500<h1>
+            <h4>{% trans "This wasn't supposed to happen! What did you do!?" %}</h4>
+            <h4>{% trans "We will send the spaguetti squad to repair this. Meanwhile you can go back to the index."%}</h4>
+        </div>
+    </div>
+{% endblock %}
