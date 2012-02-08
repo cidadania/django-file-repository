@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-19 20:48+0100\n"
+"POT-Creation-Date: 2012-02-08 10:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,41 +17,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: base.html:5
-msgid "Repository"
-msgstr "Repositorio"
+#: 404.html:9
+msgid "Nooo...!"
+msgstr "Nooo...!"
+
+#: 404.html:11
+msgid "The page you're looking for does not exist."
+msgstr "La página que estás buscando no existe."
+
+#: 404.html:12
+msgid "May it be abstract?"
+msgstr "¿Tal vez sea abstracta?"
+
+#: 500.html:10
+msgid "This wasn't supposed to happen! What did you do!?"
+msgstr "Se supone que esto no debería pasar! Qué has hecho!?"
+
+#: 500.html:11
+msgid ""
+"We will send the spaguetti squad to repair this. Meanwhile you can go back "
+"to the index."
+msgstr "Enviaremos al escuadrón espaguetti para reparar esto. Mientras tanto "
+"puedes volver a la página principal."
 
 #: base.html:30
 msgid "Logotype"
 msgstr "Logotipo"
 
-#: base.html:39
-msgid "Hi,"
-msgstr "Hola,"
+#: base.html:37
+msgid "Language"
+msgstr "Idioma"
 
-#: base.html:41
+#: base.html:43
+msgid "Home"
+msgstr "Inicio"
+
+#: base.html:45
+msgid "My files"
+msgstr "Mis archivos"
+
+#: base.html:46
 msgid "Logout"
 msgstr "Salir"
 
-#: base.html:43
+#: base.html:48
 msgid "Administration"
 msgstr "Administración"
 
-#: base.html:44
+#: base.html:49
 msgid "Add file"
 msgstr "Añadir archivo"
 
-#: base.html:47
-msgid "anonymous."
-msgstr "anónimo."
-
-#: base.html:47
+#: base.html:52 registration/login.html:38
 msgid "Login"
 msgstr "Entrar"
-
-#: base.html:48
-msgid "Register"
-msgstr "Registrarse"
 
 #: errors/not_allowed.html:4
 msgid "Not allowed"
@@ -65,47 +84,100 @@ msgstr "No estás autorizado para acceder aquí."
 msgid "You can go back to"
 msgstr "Puedes volver a"
 
-#~ msgid "Activate users"
-#~ msgstr "Activar usuarios"
+#: registration/activate.html:4
+msgid "Activation failed"
+msgstr "La activación ha fallado."
 
-#~ msgid "Re-send activation emails"
-#~ msgstr "Reenviar correo de activación"
+#: registration/activate.html:9
+msgid "User activation failed"
+msgstr "La activación de usuario ha fallado."
 
-#~ msgid "Username"
-#~ msgstr "Nombre de usuario"
+#: registration/activate.html:10
+msgid "The activation key you used probably expired or have been already used."
+msgstr "La clave de activación que has usado probablemente ha expirado o ya "
+"ha sido usada."
 
-#~ msgid "This value must contain only letters, numbers and underscores."
-#~ msgstr "Este campo debe contener sólo letras, números y guiones bajos."
+#: registration/activate.html:11 registration/activation_complete.html:11
+#: registration/registration_complete.html:11
+msgid "Go back home"
+msgstr "Volver al inicio"
 
-#~ msgid "E-mail"
-#~ msgstr "Correo electrónico"
+#: registration/activation_complete.html:4
+msgid "Activation complete"
+msgstr "Activación completa"
 
-#~ msgid "Password"
-#~ msgstr "Contraseña"
+#: registration/activation_complete.html:9
+msgid "User activation complete"
+msgstr "Activación de usuario completada"
 
-#~ msgid "Password (again)"
-#~ msgstr "Contraseña (otra vez)"
+#: registration/activation_complete.html:10
+msgid ""
+"The activation process has ended, you can now start using your account. Yay!"
+msgstr "El proceso de activación ha finalizado. Ya puedes empezar a utilizar "
+"tu cuenta. Mola!"
 
-#~ msgid "A user with that username already exists."
-#~ msgstr "Ya existe un usuario con ese nombre."
+#: registration/login.html:4 registration/login.html.py:12
+msgid "User login"
+msgstr "Entrada de usuario"
 
-#~ msgid "The two password fields didn't match."
-#~ msgstr "Las dos contraseñas no coinciden."
+#: registration/login.html:15 registration/registration_form.html:20
+msgid "Username"
+msgstr "Nombre de usuario"
 
-#~ msgid "I have read and agree to the Terms of Service"
-#~ msgstr "He leido y acepto los términos de servicio"
+#: registration/login.html:25 registration/registration_form.html:52
+msgid "Password"
+msgstr "Contraseña"
 
-#~ msgid "You must agree to the terms to register"
-#~ msgstr "Debes aceptar los términos para registrarte"
+#: registration/login.html:47
+msgid "Helpful links"
+msgstr "Enlaces útiles"
 
-#~ msgid ""
-#~ "This email address is already in use. Please supply a different email "
-#~ "address."
-#~ msgstr ""
-#~ "Esta dirección de correo ya está en uso. Por favor, escribe una dirección "
-#~ "diferente."
+#: registration/login.html:48
+msgid "Change your password"
+msgstr "Cambiar contraseña"
 
-#~ msgid ""
-#~ "Registration using free email addresses is prohibited. Please supply a "
-#~ "different email address."
-#~ msgstr "El registro mediante direcciones de correo gratuitas está prohibido"
+#: registration/login.html:49
+msgid "Sign up!"
+msgstr "Registrate!"
+
+#: registration/logout.html:4 registration/logout.html.py:8
+msgid "Logged out"
+msgstr "Has salido de tu cuenta"
+
+#: registration/logout.html:9
+msgid "You've been logged out."
+msgstr "Has sido desconectado de tu cuenta."
+
+#: registration/logout.html:12
+msgid "Go back"
+msgstr "Volver"
+
+#: registration/registration_complete.html:4
+#: registration/registration_complete.html:9
+msgid "Registration complete"
+msgstr "Registro completado"
+
+#: registration/registration_complete.html:10
+msgid ""
+"The registration process has ended, we have sent you an email with your user "
+"and password."
+msgstr "El proceso de registro ha finalizado, te hemos enviado un correo con "
+"tu usuario y clave"
+
+#: registration/registration_form.html:4
+#: registration/registration_form.html:11
+msgid "User registration"
+msgstr "Registro de usuario"
+
+#: registration/registration_form.html:36
+msgid "E-mail (optional)"
+msgstr "E-Mail (opcional)"
+
+#: registration/registration_form.html:68
+msgid "Password (again)"
+msgstr "Contraseña (otra vez)"
+
+#: registration/registration_form.html:83
+msgid "Register"
+msgstr "Registrarse"
+

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-19 16:09+0100\n"
+"POT-Creation-Date: 2012-02-08 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,180 +17,229 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:11
+#: models.py:38
 msgid "Category name"
 msgstr "Nome da categoría"
 
-#: models.py:12
+#: models.py:39
 msgid "Name of the category. 100 chars maximum."
 msgstr "Nome da categoría. 100 caracteres máximo."
 
-#: models.py:13
+#: models.py:40
 msgid "Description"
 msgstr "Descrición"
 
-#: models.py:19
+#: models.py:46
 msgid "Category"
 msgstr "Categoría"
 
-#: models.py:20
+#: models.py:47 templates/repository/category_list.html:9
+#: templates/repository/files_per_category.html:9
 msgid "Categories"
 msgstr "Categorías"
 
-#: models.py:30
+#: models.py:70
 msgid "Name"
 msgstr "Nome"
 
-#: models.py:31
+#: models.py:71
 msgid "This will be the visible name of the file."
 msgstr "Este será o nome público do arquivo."
 
-#: models.py:32
+#: models.py:72
 msgid "Description of the file"
 msgstr "Descrición do arquivo"
 
-#: models.py:35
+#: models.py:74
 msgid "File to upload"
 msgstr "Arquivos a cargar"
 
-#: models.py:36
-msgid "Maximum file size is 25MB."
-msgstr "O tamaño máximo é 25MB"
+#: models.py:75
+msgid "No maximum file size."
+msgstr "Sen tamaño máximo."
 
-#: models.py:37
+#: models.py:76
 msgid "Select the category"
-msgstr "Seleccione a categoría"
+msgstr "Selecciona a categoría"
 
-#: models.py:38
+#: models.py:77
 msgid "Make public"
 msgstr "Público"
 
-#: models.py:39
+#: models.py:78
 msgid "Selecting this will make the file available to public."
-msgstr "Seleccionando isto fará o arquivo dispoñible ao público."
+msgstr "Seleccionando isto farás o arquivo dispoñible ao público."
 
-#: models.py:41
+#: models.py:80
 msgid "Allowed users"
 msgstr "Usuarios permitidos"
 
-#: models.py:42
+#: models.py:81
 msgid "Select the users that can see this file."
 msgstr "Selecciona os usuarios que poden ver este arquivo."
 
-#: models.py:61
+#: models.py:100
 msgid "File"
 msgstr "Arquivo"
 
-#: models.py:62
+#: models.py:101
 msgid "Files"
 msgstr "Arquivos"
 
 #: templates/repository/category_list.html:4
-msgid "Files in"
-msgstr "Arquivos en"
+msgid "All categories"
+msgstr "Todas as categorías"
 
-#: templates/repository/category_list.html:16
-#: templates/repository/repofile_index.html:17
-#: templates/repository/repofile_user_files.html:16
+#: templates/repository/category_list.html:8
+#: templates/repository/files_per_category.html:8
+#: templates/repository/repofile_add.html:8
+#: templates/repository/repofile_confirm_delete.html:8
+#: templates/repository/repofile_detail.html:8
+#: templates/repository/repofile_edit.html:8
+#: templates/repository/repofile_index.html:8
+#: templates/repository/repofile_user_files.html:8
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/repository/category_list.html:20
+#: templates/repository/files_per_category.html:21
+#: templates/repository/repofile_index.html:20
+#: templates/repository/repofile_user_files.html:20
 msgid "previous"
 msgstr "anterior"
 
-#: templates/repository/category_list.html:18
-#: templates/repository/repofile_index.html:19
-#: templates/repository/repofile_user_files.html:18
+#: templates/repository/category_list.html:22
+#: templates/repository/files_per_category.html:23
+#: templates/repository/repofile_index.html:22
+#: templates/repository/repofile_user_files.html:22
 msgid "of"
 msgstr "de"
 
-#: templates/repository/category_list.html:20
-#: templates/repository/repofile_index.html:21
-#: templates/repository/repofile_user_files.html:20
+#: templates/repository/category_list.html:24
+#: templates/repository/files_per_category.html:25
+#: templates/repository/repofile_index.html:24
+#: templates/repository/repofile_user_files.html:24
 msgid "next"
 msgstr "seguinte"
 
-#: templates/repository/category_list.html:29
-#: templates/repository/repofile_index.html:30
-msgid ""
-"Remember that no private files are shown here. Instead you will have to go "
-"to -My Files- section."
-msgstr "Recorda que os arquivos privados non se mostran aquí. Terás que ir a "
-"sección -Os meus arquivos-."
-
-#: templates/repository/category_list.html:42
-#: templates/repository/repofile_detail.html:35
-#: templates/repository/repofile_detail.html:36
-#: templates/repository/repofile_index.html:43
-#: templates/repository/repofile_user_files.html:36
-msgid "Download"
-msgstr "Descargar"
-
-#: templates/repository/category_list.html:45
-#: templates/repository/repofile_detail.html:27
-#: templates/repository/repofile_detail.html:28
-#: templates/repository/repofile_index.html:46
-#: templates/repository/repofile_user_files.html:39
-msgid "Delete"
-msgstr "Eliminar"
-
-#: templates/repository/category_list.html:54
-#: templates/repository/repofile_index.html:57
+#: templates/repository/category_list.html:37
+#: templates/repository/files_per_category.html:53
+#: templates/repository/repofile_index.html:54
 msgid "Other categories"
 msgstr "Outras categorías"
 
-#: templates/repository/category_list.html:59
-#: templates/repository/repofile_index.html:62
+#: templates/repository/category_list.html:42
+#: templates/repository/files_per_category.html:58
+#: templates/repository/repofile_index.html:59
 msgid "The aren't any categories."
 msgstr "Non hai ningunha categoría."
 
+#: templates/repository/category_list.html:45
+#: templates/repository/files_per_category.html:61
+#: templates/repository/repofile_index.html:62
+msgid "View all categories"
+msgstr "Ver todas as categorías"
+
+#: templates/repository/files_per_category.html:4
+msgid "Files in"
+msgstr "Arquivos en"
+
+#: templates/repository/files_per_category.html:41
+#: templates/repository/repofile_detail.html:40
+#: templates/repository/repofile_detail.html:41
+#: templates/repository/repofile_index.html:40
+#: templates/repository/repofile_user_files.html:40
+msgid "Download"
+msgstr "Descargar"
+
+#: templates/repository/files_per_category.html:44
+#: templates/repository/repofile_confirm_delete.html:10
+#: templates/repository/repofile_confirm_delete.html:24
+#: templates/repository/repofile_detail.html:32
+#: templates/repository/repofile_detail.html:33
+#: templates/repository/repofile_index.html:43
+#: templates/repository/repofile_user_files.html:43
+msgid "Delete"
+msgstr "Eliminar"
+
 #: templates/repository/repofile_add.html:4
-#: templates/repository/repofile_add.html:6
+#: templates/repository/repofile_add.html:9
 msgid "Add new file"
 msgstr "Engadir arquivo"
 
-#: templates/repository/repofile_add.html:39
+#: templates/repository/repofile_add.html:43
+#: templates/repository/repofile_edit.html:44
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: templates/repository/repofile_add.html:40
+#: templates/repository/repofile_add.html:44
+#: templates/repository/repofile_edit.html:45
 msgid "Create"
 msgstr "Crear"
+
+#: templates/repository/repofile_confirm_delete.html:4
+#: templates/repository/repofile_confirm_delete.html:19
+msgid "Delete file"
+msgstr "Eliminar arquivo"
+
+#: templates/repository/repofile_confirm_delete.html:9
+#: templates/repository/repofile_detail.html:9
+#: templates/repository/repofile_edit.html:9
+msgid "Repository"
+msgstr "Repositorio"
+
+#: templates/repository/repofile_confirm_delete.html:20
+msgid "Are you sure you want to delete this file? This action cannot be undone"
+msgstr "¿Estás seguro de querer eliminar este arquivo? Esta acción non se "
+"pode desfacer."
+
+#: templates/repository/repofile_confirm_delete.html:23
+msgid "Go back"
+msgstr "Volver"
 
 #: templates/repository/repofile_detail.html:4
 msgid "View file"
 msgstr "Ver arquivo"
 
-#: templates/repository/repofile_detail.html:21
-#: templates/repository/repofile_detail.html:22
+#: templates/repository/repofile_detail.html:26
+#: templates/repository/repofile_detail.html:27
+#: templates/repository/repofile_edit.html:10
 msgid "Edit"
 msgstr "Editar"
 
-#: templates/repository/repofile_detail.html:40
+#: templates/repository/repofile_detail.html:45
 msgid "No download available."
 msgstr "Non hai descarga."
 
-#: templates/repository/repofile_detail.html:43
+#: templates/repository/repofile_detail.html:48
 msgid "Tags:"
 msgstr "Etiquetas:"
+
+#: templates/repository/repofile_edit.html:4
+msgid "Edit file"
+msgstr "Editar arquivo"
 
 #: templates/repository/repofile_index.html:4
 msgid "YOURNAME repository"
 msgstr "Repositorio NOME"
 
-#: templates/repository/repofile_index.html:10
-msgid "Public document list"
-msgstr "Lista de documentos públicos"
+#: templates/repository/repofile_index.html:13
+msgid "Public documents"
+msgstr "Documentos públicos"
 
-#: templates/repository/repofile_index.html:52
+#: templates/repository/repofile_index.html:49
 msgid "No files."
 msgstr "Sen arquivos."
-
-#: templates/repository/repofile_index.html:65
-msgid "My files"
-msgstr "Os meus arquivos"
 
 #: templates/repository/repofile_user_files.html:4
 msgid "Your files"
 msgstr "Os teus arquivos"
 
-#: templates/repository/repofile_user_files.html:45
+#: templates/repository/repofile_user_files.html:9
+msgid "My Files"
+msgstr "Os meus arquivos"
+
+#: templates/repository/repofile_user_files.html:49
 msgid "You don't have any private files."
 msgstr "Non tes arquivos privados."
+

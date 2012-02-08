@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-19 20:49+0100\n"
+"POT-Creation-Date: 2012-02-08 10:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,41 +17,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: base.html:5
-msgid "Repository"
-msgstr "Repositorio"
+#: 404.html:9
+msgid "Nooo...!"
+msgstr "Nooon...!"
+
+#: 404.html:11
+msgid "The page you're looking for does not exist."
+msgstr "A páxina que estás a buscar non existe."
+
+#: 404.html:12
+msgid "May it be abstract?"
+msgstr "¿Tal vez sexa abstracta?"
+
+#: 500.html:10
+msgid "This wasn't supposed to happen! What did you do!?"
+msgstr "Isto non debería ocurrir! Qué fixeches?"
+
+#: 500.html:11
+msgid ""
+"We will send the spaguetti squad to repair this. Meanwhile you can go back "
+"to the index."
+msgstr "Enviaremos ó escuadrón espaguetti para reparar isto. Mentres tanto "
+"podes volver á páxina principal."
 
 #: base.html:30
 msgid "Logotype"
 msgstr "Logotipo"
 
-#: base.html:39
-msgid "Hi,"
-msgstr "Ola,"
+#: base.html:37
+msgid "Language"
+msgstr "Idioma"
 
-#: base.html:41
+#: base.html:43
+msgid "Home"
+msgstr "Inicio"
+
+#: base.html:45
+msgid "My files"
+msgstr "Os meus arquivos"
+
+#: base.html:46
 msgid "Logout"
 msgstr "Saír"
 
-#: base.html:43
+#: base.html:48
 msgid "Administration"
 msgstr "Administración"
 
-#: base.html:44
+#: base.html:49
 msgid "Add file"
 msgstr "Engadir arquivo"
 
-#: base.html:47
-msgid "anonymous."
-msgstr "anónimo."
-
-#: base.html:47
+#: base.html:52 registration/login.html:38
 msgid "Login"
 msgstr "Entrar"
-
-#: base.html:48
-msgid "Register"
-msgstr "Rexistrarse"
 
 #: errors/not_allowed.html:4
 msgid "Not allowed"
@@ -64,3 +83,101 @@ msgstr "Non estás autorizado para acceder a esta zona."
 #: errors/not_allowed.html:13
 msgid "You can go back to"
 msgstr "Podes volver a"
+
+#: registration/activate.html:4
+msgid "Activation failed"
+msgstr "Activación fallida"
+
+#: registration/activate.html:9
+msgid "User activation failed"
+msgstr "A activación de usuario fallou"
+
+#: registration/activate.html:10
+msgid "The activation key you used probably expired or have been already used."
+msgstr "A chave de activación que acabas de empregar xa expirou ou xa foi "
+"usada."
+
+#: registration/activate.html:11 registration/activation_complete.html:11
+#: registration/registration_complete.html:11
+msgid "Go back home"
+msgstr "Volver ao inicio"
+
+#: registration/activation_complete.html:4
+msgid "Activation complete"
+msgstr "Activación completada"
+
+#: registration/activation_complete.html:9
+msgid "User activation complete"
+msgstr "Activación de usuario completada"
+
+#: registration/activation_complete.html:10
+msgid ""
+"The activation process has ended, you can now start using your account. Yay!"
+msgstr "O proceso de activación xa finalizou, podes comezar a usar a túa "
+"conta. Mola!"
+
+#: registration/login.html:4 registration/login.html.py:12
+msgid "User login"
+msgstr "Entrada de usuario"
+
+#: registration/login.html:15 registration/registration_form.html:20
+msgid "Username"
+msgstr "Nome de usuario"
+
+#: registration/login.html:25 registration/registration_form.html:52
+msgid "Password"
+msgstr "Contrasinal"
+
+#: registration/login.html:47
+msgid "Helpful links"
+msgstr "Ligazóns útiles"
+
+#: registration/login.html:48
+msgid "Change your password"
+msgstr "Cambiar o contrasinal"
+
+#: registration/login.html:49
+msgid "Sign up!"
+msgstr "Rexístrate!"
+
+#: registration/logout.html:4 registration/logout.html.py:8
+msgid "Logged out"
+msgstr "Desconexión"
+
+#: registration/logout.html:9
+msgid "You've been logged out."
+msgstr "Saíches da túa sesión."
+
+#: registration/logout.html:12
+msgid "Go back"
+msgstr "Volver"
+
+#: registration/registration_complete.html:4
+#: registration/registration_complete.html:9
+msgid "Registration complete"
+msgstr "Rexistro compelado"
+
+#: registration/registration_complete.html:10
+msgid ""
+"The registration process has ended, we have sent you an email with your user "
+"and password."
+msgstr "O proceso de rexistro completouse, enviamoste un correo co teu "
+"usuario e contrasinal"
+
+#: registration/registration_form.html:4
+#: registration/registration_form.html:11
+msgid "User registration"
+msgstr "Rexistro de usuario"
+
+#: registration/registration_form.html:36
+msgid "E-mail (optional)"
+msgstr "E-Mail (opcional)"
+
+#: registration/registration_form.html:68
+msgid "Password (again)"
+msgstr "Contrasinal (de novo)"
+
+#: registration/registration_form.html:83
+msgid "Register"
+msgstr "Rexistrarse"
+
