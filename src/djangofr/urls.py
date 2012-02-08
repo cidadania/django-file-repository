@@ -27,7 +27,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    url(r'^$', 'repository.views.index', name='home'),
+    url(r'^$', 'djangofr.repository.views.index', name='home'),
 
     url(r'^admin/', include(admin.site.urls)),
 
@@ -35,7 +35,7 @@ urlpatterns = patterns('',
 
     url(r'^i18n/', include('django.conf.urls.i18n')),
     
-    url(r'^repo/', include('repository.urls')),
+    url(r'^repo/', include('djangofr.repository.urls')),
     
     # Media content #### FOR DEVELOPMENT!! ####
     (r'^uploads/(?P<path>.*)$', 'django.views.static.serve',
